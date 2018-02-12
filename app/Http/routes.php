@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('lite.layouts.index');
 });
 
 Route::get('/page', function () {
