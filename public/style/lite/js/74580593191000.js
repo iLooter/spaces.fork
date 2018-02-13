@@ -1,0 +1,1 @@
+if (window.show_ads){show_ads(0, 1000);}

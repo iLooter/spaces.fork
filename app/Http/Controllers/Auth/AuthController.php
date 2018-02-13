@@ -48,11 +48,18 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        //default validator
+        /*return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+        ]);*/
+
+        //my validator (disable name and password registration). We will generate password after reg and send on email. Nickname will be cyhange user manuanly
+        return Validator::make($data, [
+            'email' => 'required|email|max:255|unique:users',
         ]);
+
     }
 
     /**
@@ -63,10 +70,12 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        //my validator (disable name and password registration). We will generate password after reg and send on email. Nickname will be cyhange user manuanly
+
         return User::create([
-            'name' => $data['name'],
+            'name' => 'RandomName',
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt('123456'),
         ]);
     }
 }
