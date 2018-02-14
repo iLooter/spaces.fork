@@ -16,7 +16,7 @@ Route::group(['middleware'=>'web'], function() {
     Route::get('/', ['uses' => 'IndexController@show',
                      'as' => 'home'
     ]);
-    Route::auth();
+    Auth::routes();
 
     //test auth and reg
     // Маршруты аутентификации...
@@ -31,6 +31,6 @@ Route::group(['middleware'=>'web'], function() {
 
 
 
-Route::auth();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');
