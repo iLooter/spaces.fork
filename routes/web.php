@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+//temp logout without controller and
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('/');
+});
+
+Route::get('/startpage', function(){
+    return view('user.start_page');
+});
