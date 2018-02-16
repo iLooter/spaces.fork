@@ -2,22 +2,8 @@
 
 @section('content')
 
-<div class="lc_br wbg font0 relative oh" id="header_path">
-    <a href="/" style="font-size:0;">
-        <img src="{{ asset('/') }}/icons/home.png" alt="">
-    </a>
-    <span class="lc_brw">
-        <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-        <a href="">id47612653</a>
-    </span>
-    <span class="lc_brw">
-        <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-        <span class="lc_br_text">Старт</span>
-    </span>
-</div>
-
 <div class="wrapper">
-    <a href="" class="link -full    blue c-blue  link_arrow">
+    <a href="{{ route('change_nick') }}" class="link -full    blue c-blue  link_arrow">
         <span>
             <table class="table__wrap table_no_borders">
                 <tbody>

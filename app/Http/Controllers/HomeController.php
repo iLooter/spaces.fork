@@ -23,9 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $home_content = view('.home_content')->render();
 
-        return view('.home')->with('home_content', $home_content);
+
+        return view('.home');
     }
 
 }

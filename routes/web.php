@@ -11,9 +11,21 @@
 |
 */
 
+Auth::routes();
+
+
+Route::get('/startpage', 'UserController@startpage');
+//User Routes
+Route::group(['prefix' => 'settings'], function(){
+    Route::get('/', 'UserController@index');
+    Route::match(['get', 'post'], 'change_nick', 'UserController@changeNick')->name('change_nick');
+
+});
+
+
 Route::get('/', 'HomeController@index');
 
-Auth::routes();
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -24,6 +36,3 @@ Route::get('/logout', function(){
     return redirect('/');
 });
 
-Route::get('/startpage', function(){
-    return view('user.start_page');
-});
