@@ -27,13 +27,14 @@
         @show
 
         <div class="main">
+
             @yield('content')
+
         </div>
 
         @section('footer')
             @include('layouts.footer')
         @show
-
     </div>
 </body>
 </html>

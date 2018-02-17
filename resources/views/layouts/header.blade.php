@@ -48,6 +48,7 @@
     </div>
 
 @else
+
     <div class="unauth_header">
     <table width="100%" class="unauth_header" cellspacing="0" cellpadding="0">
         <tbody>

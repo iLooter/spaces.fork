@@ -292,5 +292,4 @@
 
 <div class="cl"></div>
 <div style="height: 1px;"></div>
-</div>
 @endsection
