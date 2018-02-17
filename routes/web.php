@@ -18,7 +18,7 @@ Route::get('/startpage', 'UserController@startpage');
 //User Routes
 Route::group(['prefix' => 'settings'], function(){
     Route::get('/', 'UserController@index');
-    Route::match(['get', 'post'], 'change_nick', 'UserController@changeNick')->name('change_nick');
+    Route::match(['get', 'post'], 'change_login', 'UserController@changeLogin')->name('change_login');
 
 });
 

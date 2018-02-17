@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use Validator;
-use App\User;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -37,14 +37,10 @@ class UserController extends Controller
 
     public function startpage()
     {
-        if (Auth::check()) {
-           // return redirect()->to('/startpage/' . Auth::user()->name);
-            return view('user.start_page');
-        }
-        return redirect()->to('/login');
+        return view('user.start_page');
     }
 
-    public function changeNick(Request $request)
+    public function changeLogin(Request $request)
     {
         $message = NULL;
 
@@ -55,23 +51,22 @@ class UserController extends Controller
 
             //redirect if fails
             if ($validator->fails()) {
-                redirect()->route('change_nick')->withErrors($validator)->withInput();
+                redirect()->route('change_login')->withErrors($validator)->withInput();
             } else {
 
                 if( ! isset($this->currentUser->login) ) {
                     $this->currentUser->login = $request->get('login');
                     $this->currentUser->save();
-                    $message = "Your Login has been succesfully set to ".$request->get('login');
-                }
-                else {
-                    redirect()->route('change_nick')->withErrors(['You already set login'])->withInput();
+                    $message = "Your Login has been succesfully set to $request->get('login')";
+                } else {
+                    redirect()->route('change_login')->withErrors(['You already set login'])->withInput();
                 }
 
             }
 
         }
 
-        return view('user.settings.change_nick', compact('message'));
+        return view('user.settings.change_login', compact('message'));
 
     }
 
