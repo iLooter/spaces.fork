@@ -17,13 +17,6 @@ class UserController extends Controller
     {
         $this->middleware('auth');
 
-        //get model of auth user https://laravel.com/docs/5.3/upgrade#5.3-session-in-constructors
-        $this->middleware(function ($request, $next) {
-            $this->currentUser = User::find(Auth::id());
-
-            return $next($request);
-        });
-
 
     }
 
@@ -40,7 +33,7 @@ class UserController extends Controller
         return view('user.start_page');
     }
 
-    public function changeLogin(Request $request)
+    /*public function changeLogin(Request $request)
     {
         $message = NULL;
 
@@ -54,9 +47,9 @@ class UserController extends Controller
                 redirect()->route('change_login')->withErrors($validator)->withInput();
             } else {
 
-                if( ! isset($this->currentUser->login) ) {
-                    $this->currentUser->login = $request->get('login');
-                    $this->currentUser->save();
+                if( ! isset(Auth::user()->login) ) {
+                    Auth::user()->login = $request->get('login');
+                    Auth::user()->save();
                     $message = "Your Login has been succesfully set to $request->get('login')";
                 } else {
                     redirect()->route('change_login')->withErrors(['You already set login'])->withInput();
@@ -68,7 +61,7 @@ class UserController extends Controller
 
         return view('user.settings.change_login', compact('message'));
 
-    }
+    }*/
 
     /**
      * Change the user's password.

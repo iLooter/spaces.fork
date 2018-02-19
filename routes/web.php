@@ -19,8 +19,12 @@ Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
 Route::group(['prefix' => 'settings'], function(){
     Route::get('/', 'SettingController@index')->name('settings.index');
 
-    Route::get('change_login', 'UserController@changeLogin')->name('change_login');
-    Route::post('change_login', 'UserController@changeLogin')->name('change_login');
+    //Change Password
+    Route::get('change_password', 'SettingController@showChangePasswordForm')->name('settings.change_password_form');
+    Route::post('change_password', 'SettingController@changePassword')->name('settings.change_password');
+
+    Route::get('change_login', 'SettingController@changeLogin')->name('settings.change_login');
+    Route::post('change_login', 'SettingController@changeLogin')->name('settings.change_login');
 
 
 });
