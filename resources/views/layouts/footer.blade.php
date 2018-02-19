@@ -20,7 +20,6 @@
         <a href="">+</a>
     </div>
 @else
-
     <div class="list_item unauth_header ucsep vlight_border_bottom small lh_160" style="height:auto;">
         <a href="">Контакты</a> · <a href=""> О
             нас </a> ·
@@ -28,7 +27,6 @@
         <a href="">Правила</a> ·
         <a href="">Тех.поддержка</a>
     </div>
-
 @endauth
 
 
@@ -48,11 +46,7 @@
     <!--Counters-->
     <div class="stnd_padd vlight_border_bottom">
         <div class="t_center">
-            <a id="mobtop" href="" title="Рейтинг мобильных сайтов.">
-                <img alt="MobTop.Ru - Top Mobile Rating" src="{{ asset('/') }}/icons/16.gif"
-                     style="opacity: 1 !important;">
-            </a>
-            <br>
+
         </div>
     </div>
 </div>

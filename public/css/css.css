@@ -172,7 +172,7 @@ input[type="file"] {
     border-bottom: 0
 }
 
-.grey, a.grey_link, span.grey_link a, .mc9304c09, a.light_link {
+.grey, a.grey_link, span.grey_link a, .k48db58, a.light_link {
     color: #7a90a0
 }
 
@@ -547,7 +547,7 @@ a.region_link:visited, .author_settings, a.region_link, .t-strong_special .gr {
     text-align: left !important
 }
 
-.att_it, .overfl_hid, #logo_panel, .pre_content_wrap, .preview_widget div, .m08648f70, .preview_widget, .bookmark_block, #mads, .comm_attach, .oh, .cf {
+.att_it, .overfl_hid, #logo_panel, .pre_content_wrap, .preview_widget div, .k67bb70, .preview_widget, .bookmark_block, #mads, .comm_attach, .oh, .cf {
     overflow: hidden
 }
 
@@ -836,7 +836,7 @@ i.i {
 }
 
 .progress-item__runner_anim {
-    background: #9ab2cc url(//c.spac.me/i/progress.gif?r=1538p) repeat-x
+    background: #9ab2cc url(//c.spac.me/i/progress.gif?r=1539p) repeat-x
 }
 
 .progress-item_top {
@@ -997,7 +997,7 @@ video {
     border-top: 0 !important
 }
 
-.no-borders .light-comment:last-child, .no-borders #m8ee7ce2d, .no-borders .list_item, .no-borders .strong_border, .list_item .list .stnd_padd:last-child, .list_item .list .t-block_item:last-child, .sub_link a, .bb0 {
+.no-borders .light-comment:last-child, .no-borders #qf845bd3d2, .no-borders .list_item, .no-borders .strong_border, .list_item .list .stnd_padd:last-child, .list_item .list .t-block_item:last-child, .sub_link a, .bb0 {
     border-bottom: 0 !important
 }
 
@@ -1032,125 +1032,125 @@ video {
 }
 
 .gallery__descr {
-    background: transparent url('//c.spac.me/i/gallery_descr_bg.png?r=1538p') left bottom repeat-x
+    background: transparent url('//c.spac.me/i/gallery_descr_bg.png?r=1539p') left bottom repeat-x
 }
 
 .ico_payment {
     margin: 0 3px -3px 0;
-    background: url("//c.spac.me/i/ico_payment.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_payment.png?r=1539p") no-repeat
 }
 
 .ico_services {
-    background: url("//c.spac.me/i/ico_services.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_services.png?r=1539p") no-repeat;
     width: 32px;
     height: 32px
 }
 
 .ico_gallery {
-    background: url("//c.spac.me/i/ico_gallery.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_gallery.png?r=1539p") no-repeat
 }
 
 .ico_soc {
     margin: 0 3px -3px 0;
-    background: url("//c.spac.me/i/ico_soc.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_soc.png?r=1539p") no-repeat;
     width: 18px;
     height: 18px
 }
 
 .ico_lenta {
     margin: 0 4px -3px 0;
-    background: url("//c.spac.me/i/ico_lenta.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_lenta.png?r=1539p") no-repeat
 }
 
 .ico_about {
-    background: url("//c.spac.me/i/ico_about.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_about.png?r=1539p") no-repeat;
     width: 32px;
     height: 32px
 }
 
 .ico_lists {
-    background: url("//c.spac.me/i/ico_lists.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_lists.png?r=1539p") no-repeat
 }
 
 .tile-menu__pic {
     margin: 25px 0 10px 0;
-    background: url("//c.spac.me/i/tile_main.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/tile_main.png?r=1539p") no-repeat;
     width: 40px;
     height: 40px
 }
 
 .f__ico, .footer_edit .footer__links-wrapper .footer__link:after, .horiz-menu__link-ico {
     display: inline-block;
-    background: url("//c.spac.me/i/quick_links.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/quick_links.png?r=1539p") no-repeat;
     width: 22px;
     height: 22px
 }
 
 .ico_cats {
-    background: url("//c.spac.me/i/ico_cats.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_cats.png?r=1539p") no-repeat
 }
 
 .ico_soo {
-    background: url("//c.spac.me/i/ico_soo.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_soo.png?r=1539p") no-repeat
 }
 
 .ico_mail {
-    background: url("//c.spac.me/i/ico_mail.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_mail.png?r=1539p") no-repeat
 }
 
 .ico_abar {
-    background: url("//c.spac.me/i/ico_abar.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_abar.png?r=1539p") no-repeat
 }
 
 .ico_prof {
-    background: url("//c.spac.me/i/ico_prof.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_prof.png?r=1539p") no-repeat
 }
 
 .ico_attaches {
     margin: 0 4px -3px 0;
-    background: url("//c.spac.me/i/ico_attaches.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_attaches.png?r=1539p") no-repeat
 }
 
 .ico_chat {
-    background: url("//c.spac.me/i/ico_chat.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_chat.png?r=1539p") no-repeat
 }
 
 .adv_user_link span {
     cursor: pointer;
-    background: url("//c.spac.me/i/adv_links.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/adv_links.png?r=1539p") no-repeat;
     width: 16px;
     height: 16px
 }
 
 .ico, .s-chb:after, .form-checkbox:after, .pgn__go, .mail__checkbox:after, body input[type=submit].delete-btn {
     display: inline-block;
-    background: url("//c.spac.me/i/ico.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico.png?r=1539p") no-repeat;
     width: 16px;
     height: 16px
 }
 
 .ico_flags {
     margin-right: 5px;
-    background: url("//c.spac.me/i/ico_flags.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_flags.png?r=1539p") no-repeat;
     width: 18px;
     height: 12px
 }
 
 .ico_mchest {
-    background: url("//c.spac.me/i/ico_mchest.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_mchest.png?r=1539p") no-repeat;
     width: 48px;
     height: 48px
 }
 
 .ico_compl {
     margin: 0 4px 1px 0;
-    background: url("//c.spac.me/i/ico_compl.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_compl.png?r=1539p") no-repeat;
     width: 9px;
     height: 9px
 }
 
 .ico_adult {
-    background: url("//c.spac.me/i/ico_adult.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_adult.png?r=1539p") no-repeat;
     width: 56px;
     height: 56px
 }
@@ -1159,7 +1159,7 @@ video {
     position: absolute;
     left: 50%;
     top: 50%;
-    background: url("//c.spac.me/i/ico_player.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_player.png?r=1539p") no-repeat;
     width: 48px;
     height: 48px
 }
@@ -1167,20 +1167,20 @@ video {
 .ico_header_logo_newyear {
     margin: 0 4px -3px 0;
     display: inline-block;
-    background: url("//c.spac.me/i/ico_header_logo_newyear.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_header_logo_newyear.png?r=1539p") no-repeat;
     width: 100px;
     height: 18px
 }
 
 .ico_logo_newyear {
-    background: url("//c.spac.me/i/ico_logo_newyear.png?r=1538p") no-repeat;
+    background: url("//c.spac.me/i/ico_logo_newyear.png?r=1539p") no-repeat;
     width: 126px;
     height: 22px
 }
 
 .ico_files {
     margin: 0 4px -1px 0;
-    background: url("//c.spac.me/i/ico_files.png?r=1538p") no-repeat
+    background: url("//c.spac.me/i/ico_files.png?r=1539p") no-repeat
 }
 
 .ico_payment, .ico_gallery, .ico_lenta, .ico_lists, .ico_cats, .ico_soo, .ico_mail, .ico_abar, .ico_prof, .ico_attaches, .ico_chat, .ico_files {
@@ -1193,13 +1193,13 @@ video {
     display: inline-block
 }
 
-.m5d5a1211 {
+.q69ab203f6 {
     margin: 0;
     background-position: 0px -180px;
     width: 50px
 }
 
-.m32f797aa {
+.qebb7f7063 {
     background-position: -22px -198px;
     width: 20px;
     height: 20px
@@ -1387,7 +1387,7 @@ body .unauth_header__link_enter {
     padding: 5px 10px 6px 5px
 }
 
-.m5a3cc828, .list-link {
+.q0215b4785, .list-link {
     display: block;
     overflow: hidden;
     position: relative;
@@ -1632,7 +1632,7 @@ body.operamini20.android input.search__btn {
 }
 
 body input.search__btn {
-    background: transparent url('//c.spac.me/i/search_icon.png?r=1538p') center center no-repeat
+    background: transparent url('//c.spac.me/i/search_icon.png?r=1539p') center center no-repeat
 }
 
 .form-tools__left {
@@ -2092,7 +2092,7 @@ form {
     padding: 10px
 }
 
-.full_link:before, .mfcbd0990:before {
+.full_link:before, .q09c606e61:before {
     content: '';
     display: block;
     position: absolute;
@@ -2179,7 +2179,7 @@ select {
     border-bottom: 0
 }
 
-.m029709b5, .link {
+.q318642f7d, .link {
     display: block;
     position: relative;
     background: #fff;
@@ -2356,11 +2356,11 @@ a.selected {
     border: 0
 }
 
-.wrapper, .wrapper-nobg, .m732d68ae {
+.wrapper, .wrapper-nobg, .qf1f80c779 {
     margin: 10px 5px
 }
 
-.wrapper, .m732d68ae {
+.wrapper, .qf1f80c779 {
     background: #fff;
     border: 1px solid #c5d3e1
 }
@@ -2383,7 +2383,7 @@ a.selected {
     color: #7a90a0
 }
 
-.block, .bubble, .m8272ee61, .block_narrow {
+.block, .bubble, .q9b4f90a09, .block_narrow {
     padding: 10px;
     display: block;
     background: #fff;
@@ -2667,7 +2667,7 @@ body .input-txt_wrapper_inline input[type="submit"].delete-btn {
     padding-left: 8px
 }
 
-.green, .green_link, .link-green, a.green_link span, #m8ee7ce2d a {
+.green, .green_link, .link-green, a.green_link span, #qf845bd3d2 a {
     color: #61a961
 }
 
@@ -2787,7 +2787,7 @@ input[type="submit"].btn-transp, input[type="submit"].btn-transp:active, input[t
     display: none
 }
 
-.m3eb2909d {
+.q29f6d7dc3 {
     text-align: center
 }
 
@@ -2802,51 +2802,51 @@ input[type="submit"].btn-transp, input[type="submit"].btn-transp:active, input[t
     }
 }
 
-.m822a0099 {
+.qed8652bb5 {
     float: right;
     margin-top: 5px;
     margin-right: 5px
 }
 
-.m92521ef5 {
+.q9db52d80e {
     margin: 10px 5px;
     border: 1px solid #cccaca;
     background: #fff;
     text-align: center
 }
 
-.m92521ef5 .list_item {
+.q9db52d80e .list_item {
     text-align: left;
     border-bottom: 0;
     border-top: 1px solid #b3b3b3
 }
 
-.m8272ee61 {
+.q9b4f90a09 {
     position: relative;
     text-align: left
 }
 
-.m732d68ae .m8272ee61 {
+.qf1f80c779 .q9b4f90a09 {
     border-bottom: 1px solid #c5d3e1
 }
 
-.m56589bee {
+.qa96e63cbd {
     font-size: 0;
     float: left;
     margin-right: 6px
 }
 
-.mbc1d2a30 {
+.q4d6d8aa31 {
     position: relative;
     overflow: hidden
 }
 
-.mbc1d2a30 img {
+.q4d6d8aa31 img {
     float: left
 }
 
-#m8ee7ce2d .mbc1d2a30 {
+#qf845bd3d2 .q4d6d8aa31 {
     font-size: 13px
 }
 
-/*source host backend24, pid 26246*/
+/*source host mail10, pid 22873*/

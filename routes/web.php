@@ -14,21 +14,20 @@
 Auth::routes();
 
 
-Route::get('/startpage', 'UserController@startpage');
+Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
 //User Routes
 Route::group(['prefix' => 'settings'], function(){
-    Route::get('/', 'UserController@index');
-    Route::match(['get', 'post'], 'change_login', 'UserController@changeLogin')->name('change_login');
+    Route::get('/', 'SettingController@index')->name('settings.index');
+
+    Route::get('change_login', 'UserController@changeLogin')->name('change_login');
+    Route::post('change_login', 'UserController@changeLogin')->name('change_login');
+
 
 });
 
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');;
 
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 //temp logout without controller and
 Route::get('/logout', function(){

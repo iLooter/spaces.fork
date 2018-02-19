@@ -20,7 +20,7 @@
 
 
 <body class="js-on font_14 {{ Auth::check() ? 'auth' : 'not_auth' }}  mobile touch_light  safari   new_browser">
-    <div id="main_wrap" style="max-width:680px;margin: 0 auto;">
+    <div id="main_wrap">
 
         @section('header')
             @include('layouts.header')

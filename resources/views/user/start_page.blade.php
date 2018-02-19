@@ -278,7 +278,7 @@
     <img src="{{ asset('/') }}/icons/allservices_gray_bright_m.png" alt="" class="m p16">
     <span class="m">Дополнительные услуги</span>
 </a>
-<a href="" class="link darkblue">
+<a href="{{ route('settings.index') }}" class="link darkblue">
     <img src="{{ asset('/') }}/icons/options_bright_m.png" alt="" class="m p16">
     <span class="m">Настройки</span>
 </a>
