@@ -34,7 +34,7 @@ class SettingController extends Controller
 
             //redirect if fails
             if ($validator->fails()) {
-                redirect()->route('settings.change_login')->withErrors($validator)->withInput();
+                return redirect()->route('settings.change_login')->withErrors($validator)->withInput();
             } else {
 
                 if( ! isset(Auth::user()->login) ) {
@@ -42,7 +42,7 @@ class SettingController extends Controller
                     Auth::user()->save();
                     $message = "Your Login has been succesfully set to $request->get('login')";
                 } else {
-                    redirect()->route('settings.change_login')->withErrors(['You already set login'])->withInput();
+                    return redirect()->route('settings.change_login')->withErrors(['You already set login'])->withInput();
                 }
 
             }
@@ -61,7 +61,6 @@ class SettingController extends Controller
     public function changePassword(Request $request)
     {
 
-        $status = "";
 
         $validator = Validator::make($request->all(), [
             'current_password' => 'required|string',
@@ -71,12 +70,12 @@ class SettingController extends Controller
 
         if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
             // The passwords matches
-            return redirect()->back()->withErrors(["Your current password does not matches with the password you provided. Please try again."]);
+            return back()->withErrors(["Your current password does not matches with the password you provided. Please try again."]);
         }
 
         if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
             //Current password and new password are same
-            return redirect()->back()->withErrors(["New Password cannot be same as your current password. Please choose a different password."]);
+            return back()->withErrors(["New Password cannot be same as your current password. Please choose a different password."]);
         }
 
 
@@ -85,6 +84,58 @@ class SettingController extends Controller
         $user->save();
         $status = "Your password successfully changed";
 
-        return redirect()->back()->with(compact('status'))->withErrors($validator);
+        return back()->with(compact('status'))->withErrors($validator);
+    }
+
+    public function showEmailSettingsPage()
+    {
+        // Hide half Email Characters.
+        //!!!!!!!!
+        //!!!!!!!
+        //Вынести этот код в отдельный класс: ViewsControllerHelper или как-то так. Чтобы избежать ТТУК и обеспечить Single Responsibility
+        //https://habrahabr.ru/post/321050/ Контроллер должен заниматься делегированием команд
+        //На выходе будет поулчаться только return hideEmail: string и передаваться в представление
+        $atIndex = strpos(Auth::user()->email, '@');
+        $atIndex /= 2;
+        $currentEmail = str_repeat("*", $atIndex) . substr(Auth::user()->email, $atIndex);
+
+        return view('user.settings.email')->with(compact('currentEmail'));
+    }
+
+    public function changeEmailSettings()
+    {
+
+    }
+
+    public function showChangeEmailForm()
+    {
+        return view('user.settings.change_email');
+    }
+
+    public function changeEmail(Request $request)
+    {
+
+
+        if ($request->isMethod('POST')) {
+
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|string|email|max:255|unique:users',
+            ]);
+
+            //redirect if fails
+            if ($validator->fails()) {
+                return back()->withErrors($validator)->withInput();
+            } else {
+                //CODE
+                //SEND
+                //EMAIL CONFRIMATION if ok
+
+                session()->put('status', true);
+
+            }
+
+        }
+
+        return view('user.settings.change_email');
     }
 }

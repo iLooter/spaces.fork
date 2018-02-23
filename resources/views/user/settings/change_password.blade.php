@@ -12,7 +12,7 @@
 
 
 
-    @if(!session('status'))
+    @if( ! filled( session('status') ) )
         <div class="list_item">
         <form method="POST" action="{{ route('settings.change_password') }}">
 

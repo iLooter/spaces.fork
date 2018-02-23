@@ -17,7 +17,7 @@
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                         </span>
             </a>
-            <a href="" class="link -full  darkblue c-darkblue  link_arrow">
+            <a href="{{ route('settings.email') }}" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Настройки E - mail </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
