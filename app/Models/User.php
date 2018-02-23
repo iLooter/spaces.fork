@@ -29,32 +29,7 @@ class User extends Authenticatable
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function id(): int
-    {
-        return $this->id;
-    }
 
-    public function login(): string
-    {
-        return $this->login;
-    }
-
-    public function emailAddress(): string
-    {
-        return $this->email;
-    }
-
-    /**
-     * IPv6 addresses should be converted using MySQL's INET_ATON function.
-     * To convert them back to their original value, use INET_NTOA.
-     * in DB ip store as VARBINARY(4)
-     *
-     * @return string
-     */
-    public function ip(): string
-    {
-        return INET_NTOA($this->ip_address);
-    }
 
 
 

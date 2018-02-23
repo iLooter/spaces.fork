@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="wrapper">
-    <a href="{{ route('settings.change_login') }}" class="link -full    blue c-blue  link_arrow">
+    <a href="{{ route('settings.change_login_form') }}" class="link -full    blue c-blue  link_arrow">
         <span>
             <table class="table__wrap table_no_borders">
                 <tbody>

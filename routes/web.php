@@ -38,28 +38,28 @@ Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
 
 Route::group(['prefix' => 'settings'], function(){
 
-    Route::get('/', 'SettingController@index')->name('settings.index');
+    Route::get('/', 'Settings\MainSettingController@index')->name('settings.index');
 
 
     //Change Password
-    Route::get('change_password', 'SettingController@showChangePasswordForm')->name('settings.change_password_form');
-    Route::post('change_password', 'SettingController@changePassword')->name('settings.change_password');
+    Route::get('change_password', 'Settings\MainSettingController@showChangePasswordForm')->name('settings.change_password_form');
+    Route::post('change_password', 'Settings\MainSettingController@changePassword')->name('settings.change_password');
 
     //Email Settings
     Route::group(['prefix' => 'email'], function() {
 
-        Route::get('/', 'SettingController@showEmailSettingsPage')->name('settings.email_form');
-        Route::post('/', 'SettingController@showEmailSettingsPage')->name('settings.email');
+        Route::get('/', 'Settings\MainSettingController@showEmailSettingsPage')->name('settings.email_form');
+        Route::post('/', 'Settings\MainSettingController@showEmailSettingsPage')->name('settings.email');
 
-        Route::get('change', 'SettingController@showChangeEmailForm')->name('settings.email.change_form');
-        Route::post('change', 'SettingController@changeEmail')->name('settings.email.change');
+        Route::get('change', 'Settings\MainSettingController@showChangeEmailForm')->name('settings.email.change_form');
+        Route::post('change', 'Settings\MainSettingController@changeEmail')->name('settings.email.change');
     });
 
 
 
     //ChangeLogin
-    Route::get('change_login', 'SettingController@changeLogin')->name('settings.change_login');
-    Route::post('change_login', 'SettingController@changeLogin')->name('settings.change_login');
+    Route::get('change_login', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
+    Route::post('change_login', 'Settings\MainSettingController@changeLogin')->name('settings.change_login');
 
 
 });

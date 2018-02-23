@@ -25,12 +25,6 @@
             </a>
             <a href="" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
-                        <span class="m">Номер телефона </span>
-                        <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
-                    </span>
-            </a>
-            <a href="" class="link -full  darkblue c-darkblue  link_arrow">
-                    <span>
                         <span class="m"> Настройки приватности </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                     </span>
@@ -40,17 +34,12 @@
                         <span class="m"> Настройки почты </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12"></span>
             </a>
-            <a href="" class="link -full  darkblue c-darkblue  link_arrow">
+            <div class="last">
+                <a href="" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Чёрный список </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                     </span>
-            </a>
-            <div class="last">
-                <a href="" class="link -full  darkblue c-darkblue  link_arrow">
-                        <span>
-                            <span class="m"> Управление свободным местом </span>
-                            <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12"></span>
                 </a>
             </div>
         </div>
@@ -65,7 +54,7 @@
             <a href="" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Нижняя панель </span>
-                        <img src=".{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
+                        <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                     </span>
             </a>
             <a href="" class="link -full  darkblue c-darkblue  link_arrow">

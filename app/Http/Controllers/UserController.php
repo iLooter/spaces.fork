@@ -8,6 +8,7 @@ use Auth;
 use Validator;
 use App\Models\User;
 
+
 class UserController extends Controller
 {
 

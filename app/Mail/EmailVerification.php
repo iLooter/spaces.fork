@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
+use Auth;
 
 class EmailVerification extends Mailable
 {
@@ -31,10 +32,12 @@ class EmailVerification extends Mailable
     public function build()
     {
 
-        //if success
+        //if success else throw exception
         return $this->from(config('mail.from.address'), config('mail.from.name'))
             ->subject('Verification')
             ->view('emails.verification')
-            ->with(['email_token' => 'token', 'email' => 'test@test.ru']);
+            ->with(['email_token' => 'token',
+                    'email' => Auth::user()->email
+            ]);
     }
 }

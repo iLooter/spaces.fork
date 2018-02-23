@@ -15,11 +15,11 @@
                                         </td>
                                         <td width="60%"
                                             style="padding-left:15px;text-align:left;vertical-align:middle;font-size:0">
-                                            <a href="http://spaces.ru" style="display:block;text-decoration:none"
+                                            <a href="{{ route('home') }}" style="display:block;text-decoration:none"
                                                target="_blank"
                                                data-saferedirecturl="">
                                                 <img src="http://c.spac.me/i/spacesru_logo.png"
-                                                     alt="Spaces.ru" title="Spaces.ru"
+                                                     alt="{{ config('app.name') }}" title="{{ config('app.name') }}"
                                                      style="margin: 0px; vertical-align: middle; max-width: 2400px;"
                                                      width="121px" height="24px" border="0">
                                             </a>
@@ -56,7 +56,7 @@
                                                         style="text-align:right;vertical-align:middle;padding-right:15px;padding-top:7px;padding-bottom:7px">
                                                         <a href="{{ route('home') }}"
                                                            style="display:block;text-decoration:none;color:#7a90a0;vertical-align:middle;font-size:12px;font-family:Arial">
-                                                            Spaces.ru </a></td>
+                                                            {{ config('app.name') }} </a></td>
                                                 </tr>
                                                 </tbody>
                                             </table>

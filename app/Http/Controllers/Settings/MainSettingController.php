@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Settings;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\User\ChangeLoginRequest;
 use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class SettingController extends Controller
+
+class MainSettingController extends Controller
 {
 
 
@@ -23,31 +26,17 @@ class SettingController extends Controller
         return view('user.settings.index');
     }
 
-    public function changeLogin(Request $request)
+    public function changeLogin(ChangeLoginRequest $request)
+    {
+
+        $request->user()->login = $request->get('login');
+        $request->user()->save();
+        return back()->with('message', 'Login has been successfully changed');
+    }
+
+    public function changeLoginForm(Request $request)
     {
         $message = NULL;
-
-        if ($request->isMethod('POST')) {
-            $validator = Validator::make($request->all(), [
-                'login' => 'required|between:5,15|unique:users,login'
-            ]);
-
-            //redirect if fails
-            if ($validator->fails()) {
-                return redirect()->route('settings.change_login')->withErrors($validator)->withInput();
-            } else {
-
-                if( ! isset(Auth::user()->login) ) {
-                    Auth::user()->login = $request->get('login');
-                    Auth::user()->save();
-                    $message = "Your Login has been succesfully set to $request->get('login')";
-                } else {
-                    return redirect()->route('settings.change_login')->withErrors(['You already set login'])->withInput();
-                }
-
-            }
-
-        }
 
         return view('user.settings.change_login', compact('message'));
 
