@@ -2,8 +2,8 @@
 
 @section('content')
 
-    @if($errors->any() or $message)
-        <div class="busi">  {{ $errors->first() }} {{ $message }}</div>
+    @if($errors->any())
+        <div class="busi">  {{ $errors->first() }} </div>
     @endif
     <div class="stnd_padd" style="padding-bottom:1px;"> Тщательно выбирайте ник, его нельзя будет изменить.</div>
     <div class="list_item gradient_block1">

@@ -14,9 +14,7 @@ class ChangeLoginRequest extends FormRequest
      */
     public function authorize()
     {
-        if($this->user()->can('change-login', $this->user())) {
-            return back()->with('message', 'Login has been successfully changed');
-        }
+        return true;
 
     }
 
@@ -27,22 +25,13 @@ class ChangeLoginRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         return [
             'login' => 'required|between:5,15|unique:users,login'
         ];
     }
 
-    public function forbiddenResponse()
-    {
-        return print 'hello';
-    }
-
-    protected function unauthorized()
-    {
-        return view('user.settings.change_login')->withErrors(['You already set login']);
-    }
 
 
 

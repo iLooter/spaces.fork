@@ -29,9 +29,14 @@ class MainSettingController extends Controller
     public function changeLogin(ChangeLoginRequest $request)
     {
 
-        $request->user()->login = $request->get('login');
-        $request->user()->save();
-        return back()->with('message', 'Login has been successfully changed');
+        if ($request->user()->can('change-login')) {
+            $request->user()->login = $request->get('login');
+            $request->user()->save();
+            return back()->withErrors(['Login has been successfully changed']);
+        } else {
+            return view('user.settings.change_login')->withErrors(['You already set login']);
+        }
+
     }
 
     public function changeLoginForm(Request $request)

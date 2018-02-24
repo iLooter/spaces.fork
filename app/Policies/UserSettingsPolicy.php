@@ -22,6 +22,6 @@ class UserSettingsPolicy
     //User Can change login only when his login don't already set
     public function changeLogin(User $user)
     {
-        return !isset($user->login);
+        return empty($user->login);
     }
 }
