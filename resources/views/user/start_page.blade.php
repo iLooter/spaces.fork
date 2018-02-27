@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="wrapper">
-    <a href="{{ route('settings.change_login_form') }}" class="link -full    blue c-blue  link_arrow">
+    <a href="{{ url('/settings/change_login') }}" class="link -full    blue c-blue  link_arrow">
         <span>
             <table class="table__wrap table_no_borders">
                 <tbody>
@@ -24,7 +24,7 @@
 <div class="wrapper">
     <div class="block grey">
         <a class="right relative z10 sq_click" href="">
-            <img class="m p16" src=".{{ asset('/') }}/icons/cross_light.png" alt="">
+            <img class="m p16" src="{{ asset('/') }}/icons/cross_light.png" alt="">
         </a>
         <a href="" class="link -full    blue c-blue  link_arrow">
             <span>

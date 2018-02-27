@@ -4,7 +4,7 @@ namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ChangeLoginRequest extends FormRequest
+class ChangeEmailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ChangeLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'login' => 'required|between:5,15'
+            'email' => 'required|string|email|max:255|unique:users',
         ];
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\ChangeLoginRequest;
+use App\Http\Requests\User\ChangePasswordRequest;
+use App\Http\Requests\User\ChangeEmailRequest;
 use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 
 class MainSettingController extends Controller
 {
+    private const STATUS = 'success';
 
 
     public function __construct()
@@ -26,40 +29,45 @@ class MainSettingController extends Controller
         return view('user.settings.index');
     }
 
+    public function changeLoginForm()
+    {
+        return view('user.settings.change_login');
+
+    }
+
     public function changeLogin(ChangeLoginRequest $request)
     {
 
-        if ($request->user()->can('change-login')) {
-            $request->user()->login = $request->get('login');
+        if(session('isConfirmed') == 'yes')
+        {
+            $request->user()->login = session('new_login');
             $request->user()->save();
-            return back()->withErrors(['Login has been successfully changed']);
+            session()->forget(['new_login', 'status']);
+        }
+
+        if ($request->user()->can('change-login')) {
+            //$request->user()->login = $request->get('login');
+            //$request->user()->save();
+
+            return back()
+                ->with('new_login', $request->get('login'))
+                ->with('status', self::STATUS);
         } else {
             return view('user.settings.change_login')->withErrors(['You already set login']);
         }
 
-    }
-
-    public function changeLoginForm(Request $request)
-    {
-        $message = NULL;
-
-        return view('user.settings.change_login', compact('message'));
+        return view('user.settings.change_login');
 
     }
+
 
     public function showChangePasswordForm()
     {
         return view('user.settings.change_password');
     }
 
-    public function changePassword(Request $request)
+    public function changePassword(ChangePasswordRequest $request)
     {
-
-
-        $validator = Validator::make($request->all(), [
-            'current_password' => 'required|string',
-            'new_password' => 'required|string|between:6,16|confirmed'
-        ]);
 
 
         if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
@@ -78,7 +86,7 @@ class MainSettingController extends Controller
         $user->save();
         $status = "Your password successfully changed";
 
-        return back()->with(compact('status'))->withErrors($validator);
+        return back()->with(compact('status'));
     }
 
     public function showEmailSettingsPage()
@@ -103,32 +111,15 @@ class MainSettingController extends Controller
 
     public function showChangeEmailForm()
     {
+
         return view('user.settings.change_email');
     }
 
-    public function changeEmail(Request $request)
+    public function changeEmail(ChangeEmailRequest $request)
     {
 
 
-        if ($request->isMethod('POST')) {
-
-            $validator = Validator::make($request->all(), [
-                'email' => 'required|string|email|max:255|unique:users',
-            ]);
-
-            //redirect if fails
-            if ($validator->fails()) {
-                return back()->withErrors($validator)->withInput();
-            } else {
-                //CODE
-                //SEND
-                //EMAIL CONFRIMATION if ok
-
-                session()->put('status', true);
-
-            }
-
-        }
+        session()->put('status', true);
 
         return view('user.settings.change_email');
     }

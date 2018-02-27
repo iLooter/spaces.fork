@@ -35,6 +35,7 @@ Route::get('/logout', function(){
 | ------------------------------------------------------------------------
  */
 Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
+Route::get('/mysite', 'MysiteController@index')->name('mysite.index');
 
 Route::group(['prefix' => 'settings'], function(){
 
@@ -58,8 +59,12 @@ Route::group(['prefix' => 'settings'], function(){
 
 
     //ChangeLogin
-    Route::get('change_login', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
-    Route::post('change_login', 'Settings\MainSettingController@changeLogin')->name('settings.change_login');
+   /* Route::match(['GET', 'POST'], '/change_login', [
+        'uses' => 'Settings\MainSettingController@changeLogin',
+        'as' => 'settings.change_login'
+    ]);*/
+   Route::get('change_login', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
+   Route::post('change_login', 'Settings\MainSettingController@changeLogin')->name('settings.change_login');
 
 
 });
@@ -70,6 +75,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('confirmation/resend', 'Auth\ActivateController@resend');
     Route::get('confirmation/check/{token}', 'Auth\ActivateController@confirm')->name('user.email_confirmation_check');
 
+});
+
+//Test Routes
+Route::get('/email', function () {
+    return new App\Mail\EmailVerification();
 });
 
 

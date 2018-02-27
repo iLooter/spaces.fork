@@ -27,6 +27,11 @@
         @show
 
         <div class="main">
+            {{--Session Flash --}}
+            @if(session()->)
+            <div class="oh oh system-message  info  ">
+                <span class="m"></span>
+            </div>
 
             @yield('content')
 
