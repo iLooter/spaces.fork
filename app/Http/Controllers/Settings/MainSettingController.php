@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 
 class MainSettingController extends Controller
@@ -31,27 +32,38 @@ class MainSettingController extends Controller
 
     public function changeLoginForm()
     {
+
         return view('user.settings.change_login');
 
     }
 
     public function changeLogin(ChangeLoginRequest $request)
     {
+        $inputYes = Input::get('yes');
+        $inputNo =  Input::get('no');
 
-        if(session('isConfirmed') == 'yes')
+        //confirm change nick
+        if(isset($inputYes))
         {
-            $request->user()->login = session('new_login');
-            $request->user()->save();
+            Auth::user()->login = session()->get('newLogin');
+            Auth::user()->save();
+            session()->forget(['newLogin', 'status']);
+            return redirect('mysite.index')->with('system-message-info', 'Ваш ник успешно изменён.');
+        }
+        elseif(isset($inputNo))
+        {
             session()->forget(['new_login', 'status']);
+            return redirect('mysite.index');
         }
 
         if ($request->user()->can('change-login')) {
+            $newLogin =  $request->user()->login;
+            session()->put(compact('newLogin'));
             //$request->user()->login = $request->get('login');
             //$request->user()->save();
 
             return back()
-                ->with('new_login', $request->get('login'))
-                ->with('status', self::STATUS);
+                ->with(self::STATUS, true);
         } else {
             return view('user.settings.change_login')->withErrors(['You already set login']);
         }
@@ -59,6 +71,12 @@ class MainSettingController extends Controller
         return view('user.settings.change_login');
 
     }
+
+    public function confirmedLogin(ChangeLoginRequest $request)
+    {
+
+    }
+
 
 
     public function showChangePasswordForm()

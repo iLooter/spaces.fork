@@ -3,7 +3,7 @@
 @section('content')
 
 
-    @if(!session()->has('status'))
+    @if(!session()->has('success'))
         @if($errors->any())
             <div class="busi">  {{ $errors->first() }} </div>
         @endif
@@ -19,12 +19,15 @@
         </div>
     @else
         <div class="list_item gradient_block1"> Новый ник:
-            <b style="color:darkmagenta">{{ session()->get('new_login') }}</b>
+            <b style="color:darkmagenta">{{ session()->get('newLogin') }}</b>
             </span>
             <br>
             <br>Вы уверены, что хотите изменить ник?<br>
-            <a href="{{ route('settings.change_login', ['isConfirmed' => 'yes']) }}" class="service_link">Да</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="{{ route('user.start_page') }}" class="red_link">Нет</a>
+            <form action="{{ route('settings.change_login') }}">
+                @csrf
+                <input type="submit" name="yes" value="Да" class="button-green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{{ route('settings.index') }}" class="red_link">Нет</a>
+            </form>
             <br>
         </div>
     @endif

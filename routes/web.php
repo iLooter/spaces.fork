@@ -63,7 +63,7 @@ Route::group(['prefix' => 'settings'], function(){
         'uses' => 'Settings\MainSettingController@changeLogin',
         'as' => 'settings.change_login'
     ]);*/
-   Route::get('change_login', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
+   Route::get('change_login/{login?}', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
    Route::post('change_login', 'Settings\MainSettingController@changeLogin')->name('settings.change_login');
 
 

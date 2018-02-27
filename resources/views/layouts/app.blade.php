@@ -28,10 +28,13 @@
 
         <div class="main">
             {{--Session Flash --}}
-            @if(session()->)
-            <div class="oh oh system-message  info  ">
-                <span class="m"></span>
-            </div>
+            @foreach(['danger', 'warning', 'success', 'info'] as $msg)
+                @if(session()->has('system-message-' . $msg))
+                    <div class="oh oh system-message  {{ $msg }}">
+                        <span class="m"> {{ sesion()->get('system-message-' . $msg) }} </span>
+                     </div>
+                @endif
+            @endforeach
 
             @yield('content')
 
