@@ -31,7 +31,7 @@
             @foreach(['danger', 'warning', 'success', 'info'] as $msg)
                 @if(session()->has('system-message-' . $msg))
                     <div class="oh oh system-message  {{ $msg }}">
-                        <span class="m"> {{ sesion()->get('system-message-' . $msg) }} </span>
+                        <span class="m"> {{ session()->get('system-message-' . $msg) }} </span>
                      </div>
                 @endif
             @endforeach

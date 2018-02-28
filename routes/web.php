@@ -37,6 +37,8 @@ Route::get('/logout', function(){
 Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
 Route::get('/mysite', 'MysiteController@index')->name('mysite.index');
 
+
+//Settings Group
 Route::group(['prefix' => 'settings'], function(){
 
     Route::get('/', 'Settings\MainSettingController@index')->name('settings.index');
@@ -46,7 +48,7 @@ Route::group(['prefix' => 'settings'], function(){
     Route::get('change_password', 'Settings\MainSettingController@showChangePasswordForm')->name('settings.change_password_form');
     Route::post('change_password', 'Settings\MainSettingController@changePassword')->name('settings.change_password');
 
-    //Email Settings
+    //Email Settings !! Edit confirmation
     Route::group(['prefix' => 'email'], function() {
 
         Route::get('/', 'Settings\MainSettingController@showEmailSettingsPage')->name('settings.email_form');
@@ -59,13 +61,21 @@ Route::group(['prefix' => 'settings'], function(){
 
 
     //ChangeLogin
-   /* Route::match(['GET', 'POST'], '/change_login', [
-        'uses' => 'Settings\MainSettingController@changeLogin',
-        'as' => 'settings.change_login'
-    ]);*/
    Route::get('change_login/{login?}', 'Settings\MainSettingController@changeLoginForm')->name('settings.change_login_form');
    Route::post('change_login', 'Settings\MainSettingController@changeLogin')->name('settings.change_login');
 
+
+});
+
+//Worksheet group
+Route::group(['prefix' => 'worksheet'], function() {
+
+    //Index Page
+    Route::get('/', 'Worksheet\MainWorksheetController@index')->name('worksheet.index');
+
+    //About page
+    Route::get('/about', 'Worksheet\MainWorksheetController@aboutEditForm')->name('worksheet.about_form');
+    Route::post('/about', 'Worksheet\MainWorksheetController@aboutEdit')->name('worksheet.about_save');
 
 });
 

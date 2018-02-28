@@ -10,7 +10,7 @@
         </a>
         <span class="lc_brw">
             <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-            <span class="lc_br_text">id{{ Auth::id() }}</span>
+            <span class="lc_br_text">@include('layouts.helpers.login_or_id')</span>
         </span>
     </div>
 
@@ -36,7 +36,7 @@
                             <img class="p14" src="{{ asset('/') }}/icons/man_on.gif" alt="(ON)">
                         </a>
                         <a href="" class="mysite-link">
-                            <b class="nick black">id{{ Auth::id() }}</b>
+                            <b class="nick black">@include('layouts.helpers.login_or_id')</b>
                         </a>
                     </span>
                     <span class="m">Ваш рейтинг:</span>
@@ -45,10 +45,7 @@
                     </div>
                     <div>
                         <div>
-                            <a href="{{ route('settings.change_login_form') }}" class="inl-link    link-blue c-blue">
-                                <span class="m">  Выберите свой ник </span>
-                                <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
-                            </a>
+                           @include('layouts.helpers.mysite_nav_settings')
                         </div>
                     </div>
                 </div>

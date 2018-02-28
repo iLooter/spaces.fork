@@ -17,6 +17,12 @@
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                         </span>
             </a>
+            <a href="{{ route('settings.change_login_form') }}" class="link -full  darkblue c-darkblue  link_arrow">
+                    <span>
+                        <span class="m"> Изменить Login </span>
+                        <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
+                        </span>
+            </a>
             <a href="{{ route('settings.email') }}" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Настройки E - mail </span>

@@ -32,13 +32,6 @@ class MainSettingController extends Controller
 
     public function changeLoginForm()
     {
-
-        return view('user.settings.change_login');
-
-    }
-
-    public function changeLogin(ChangeLoginRequest $request)
-    {
         $inputYes = Input::get('yes');
         $inputNo =  Input::get('no');
 
@@ -48,16 +41,25 @@ class MainSettingController extends Controller
             Auth::user()->login = session()->get('newLogin');
             Auth::user()->save();
             session()->forget(['newLogin', 'status']);
-            return redirect('mysite.index')->with('system-message-info', 'Ваш ник успешно изменён.');
+            return redirect()->route('mysite.index')->with('system-message-info', 'Ваш ник успешно изменён.');
         }
         elseif(isset($inputNo))
         {
-            session()->forget(['new_login', 'status']);
-            return redirect('mysite.index');
+            session()->forget(['newLogin', 'status']);
+            return redirect()->route('mysite.index');
         }
 
+        return view('user.settings.change_login');
+
+    }
+
+    public function changeLogin(ChangeLoginRequest $request)
+    {
+
+
         if ($request->user()->can('change-login')) {
-            $newLogin =  $request->user()->login;
+            $newLogin =  $request->get('login');
+
             session()->put(compact('newLogin'));
             //$request->user()->login = $request->get('login');
             //$request->user()->save();
@@ -86,18 +88,10 @@ class MainSettingController extends Controller
 
     public function changePassword(ChangePasswordRequest $request)
     {
-
-
-        /*if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
-            // The passwords matches
-            return back()->withErrors(["Your current password does not matches with the password you provided. Please try again."]);
-        }*/
-
+        //Current password and new password are same
         if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
-            //Current password and new password are same
             return back()->withErrors(["New Password cannot be same as your current password. Please choose a different password."]);
         }
-
 
         $user = Auth::user();
         $user->password = bcrypt($request->get('new_password'));

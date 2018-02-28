@@ -1,0 +1,1 @@
+{{ empty(Auth::user()->login) ? 'id' : '' }}{{ empty(Auth::user()->login) ? Auth::id() : Auth::user()->login }}
