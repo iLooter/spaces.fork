@@ -99,6 +99,7 @@ return [
     |
     */
 
+    'passcheck' => "The :attribute must be the same as your current password",
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

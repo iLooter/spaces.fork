@@ -160,6 +160,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * My Custom Service Providers
+         */
+        App\Providers\ValidationServiceProvider::class,
+
     ],
 
     /*

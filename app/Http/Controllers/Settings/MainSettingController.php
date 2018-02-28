@@ -88,10 +88,10 @@ class MainSettingController extends Controller
     {
 
 
-        if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
+        /*if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
             // The passwords matches
             return back()->withErrors(["Your current password does not matches with the password you provided. Please try again."]);
-        }
+        }*/
 
         if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
             //Current password and new password are same

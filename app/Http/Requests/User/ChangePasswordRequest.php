@@ -3,7 +3,7 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\Validation\PasscheckRule;
 
 class ChangePasswordRequest extends FormRequest
 {
@@ -28,7 +28,7 @@ class ChangePasswordRequest extends FormRequest
     public function rules() : array
     {
         return [
-            'current_password' => 'required|string',
+            'current_password' => 'required|string|'.PasscheckRule::NAME,
             'new_password' => 'required|string|between:6,16|confirmed'
         ];
     }

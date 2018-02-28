@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8252032-b0f3-4efa-b7e8-ec962a8904e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/settings/change_login.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/settings/change_login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Validation/PassCheckRule.php" afterPath="$PROJECT_DIR$/app/Validation/PassCheckRule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="MainSettingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="90" column="85" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="85" />
+            <state relative-caret-position="612">
+              <caret line="93" column="11" lean-forward="true" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
               <folding>
                 <element signature="e#49#85#0#PHP" expanded="true" />
               </folding>
@@ -42,8 +44,8 @@
       <file leaf-file-name="ValidationServiceProvider.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="459">
+              <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
               <folding>
                 <element signature="e#33#47#0#PHP" expanded="true" />
               </folding>
@@ -51,14 +53,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="validation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PassCheckRule.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Validation/PassCheckRule.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+            <state relative-caret-position="255">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="e#34#43#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="165" column="49" lean-forward="true" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,6 +123,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ChangePasswordRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+              <folding>
+                <element signature="e#42#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -121,8 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer_auth.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/header_auth.blade.php" />
@@ -157,7 +189,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/User/SettingsRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/User/ChangeLoginRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/User/ChangeEmailRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MysiteController.php" />
@@ -168,10 +199,13 @@
         <option value="$PROJECT_DIR$/app/Policies/UserSettingsPolicy.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/settings/change_login.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php" />
         <option value="$PROJECT_DIR$/app/Validation/PassCheckRule.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/validation.php" />
       </list>
     </option>
   </component>
@@ -224,6 +258,77 @@
             <path>
               <item name="social" type="b2602c69:ProjectViewProjectNode" />
               <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Settings" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Requests" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Requests" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="User" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Providers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Validation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="en" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -271,12 +376,12 @@
       <workItem from="1518630476643" duration="116176000" />
       <workItem from="1519282945558" duration="37489000" />
       <workItem from="1519625917028" duration="7069000" />
-      <workItem from="1519724825783" duration="17782000" />
+      <workItem from="1519724825783" duration="19387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178516000" />
+    <option name="totallyTimeSpent" value="180121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -386,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -491,14 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/User/SettingsRequest.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ActivateController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -507,14 +597,6 @@
           <folding>
             <element signature="e#45#54#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,30 +771,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/User/ChangePasswordRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding>
+            <element signature="e#42#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Settings/MainSettingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="90" column="85" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="85" />
+        <state relative-caret-position="612">
+          <caret line="93" column="11" lean-forward="true" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
           <folding>
             <element signature="e#49#85#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="165" column="49" lean-forward="true" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Validation/PassCheckRule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="e#34#43#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/ValidationServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="459">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
           <folding>
             <element signature="e#33#47#0#PHP" expanded="true" />
           </folding>

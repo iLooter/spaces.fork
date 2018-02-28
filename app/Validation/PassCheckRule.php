@@ -9,7 +9,7 @@ final class PasscheckRule
 {
     const NAME = 'passcheck';
 
-    public function validate($attribute, $value): bool
+    public function validate($attribute, $value, $parameters)
     {
         return Hash::check($value, Auth::user()->password);
         //return Hash::check($value, Auth::user()->getAuthPassword());

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Validator;
 use Illuminate\Support\ServiceProvider;
+use App\Validation\PasscheckRule;
 
 class ValidationServiceProvider extends ServiceProvider
 {
