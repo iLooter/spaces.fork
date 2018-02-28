@@ -15,6 +15,12 @@ class MainWorksheetController extends Controller
 
     public function index()
     {
+        /*$data =  [
+            'rating'      => Auth::user()->rating,
+            'last_user_id' => Auth::id(),
+            'status'       => true
+        ];*/
+
         return view('user.worksheet.index');
     }
 
@@ -25,6 +31,14 @@ class MainWorksheetController extends Controller
 
     public function aboutEdit()
     {
-
+        //some code here
+        return route('/');
     }
+
+    public function mainInfoEditForm()
+    {
+        return view('user.worksheet.main_info');
+    }
+
+
 }

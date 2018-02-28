@@ -144,7 +144,7 @@
                 <span>  Заполните основную информацию о себе, чтобы друзья могли вас узнать. </span>
             </div>
             <div class="last">
-                <a href="" class="link -full  blue c-blue   is_final">
+                <a href="{{ route('worksheet.main_info_form') }}" class="link -full  blue c-blue   is_final">
                     <span>
                         <img src="//c.spac.me/i/ico/plus.png" alt="" class="m">
                         <span class="m">Добавить основную информацию</span>

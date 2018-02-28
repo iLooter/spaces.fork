@@ -73,9 +73,15 @@ Route::group(['prefix' => 'worksheet'], function() {
     //Index Page
     Route::get('/', 'Worksheet\MainWorksheetController@index')->name('worksheet.index');
 
-    //About page
+    //About info page
     Route::get('/about', 'Worksheet\MainWorksheetController@aboutEditForm')->name('worksheet.about_form');
     Route::post('/about', 'Worksheet\MainWorksheetController@aboutEdit')->name('worksheet.about_save');
+
+    //About page
+    Route::get('/maininfo', 'Worksheet\MainWorksheetController@mainInfoEditForm')->name('worksheet.main_info_form');
+    Route::post('/maininfo', 'Worksheet\MainWorksheetController@mainInfoEdit')->name('worksheet.main_info_save');
+
+
 
 });
 
