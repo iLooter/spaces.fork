@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
+use Cache;
 
 class User extends Authenticatable
 {
@@ -19,7 +21,13 @@ class User extends Authenticatable
         'email',
         'password',
         'email_token',
-        'is_confirmed'
+        'is_confirmed',
+        'first_name',
+        'last_name',
+        'rating',
+        'gender',
+        'birthday',
+        'marital_status'
     ];
 
     /**
@@ -30,6 +38,19 @@ class User extends Authenticatable
     protected $hidden = ['password', 'remember_token'];
 
 
+
+    public function howOld()
+    {
+
+        return empty($this->birthday) ? '' : Carbon::createFromFormat('Y-m-d', $this->birthday)->diff(Carbon::now())->y;
+
+    }
+
+    //check if user online. See LogLasUserActivity middleware
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
+    }
 
 
 

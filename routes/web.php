@@ -35,7 +35,7 @@ Route::get('/logout', function(){
 | ------------------------------------------------------------------------
  */
 Route::get('/startpage', 'UserController@startpage')->name('user.start_page');
-Route::get('/mysite', 'MysiteController@index')->name('mysite.index');
+
 
 
 //Settings Group
@@ -66,6 +66,12 @@ Route::group(['prefix' => 'settings'], function(){
 
 
 });
+
+
+//Userprofile page
+Route::get('/id{id}', ['uses' => 'UserController@profile'])->name('user.profile');
+//Current userprofilepage
+Route::get('/mysite', 'UserController@mysite')->name('mysite.index');
 
 //Worksheet group
 Route::group(['prefix' => 'worksheet'], function() {

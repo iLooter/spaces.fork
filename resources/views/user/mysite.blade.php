@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <div class="lc_br wbg font0 relative oh" id="header_path">
         <a href="" style="font-size:0;">
             <img src="{{ asset('/') }}/icons/home.png" alt="">

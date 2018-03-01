@@ -34,6 +34,31 @@ class UserController extends Controller
         return view('user.start_page');
     }
 
+    public function profile(int $id)
+    {
+        //if it's user current profile
+
+        if(Auth::id() == $id) {
+
+            return view('user.mysite')/*->with(compact('user'))*/;
+        }
+
+        //if user saw another profile
+        $user = User::find($id);
+
+        //if user don't find
+        if(!$user) {
+            return redirect()->route('home');
+        }
+
+        return view('user.profile.index')->with(compact('user'));
+    }
+
+    public function mysite()
+    {
+        return view('user.mysite');
+    }
+
 
 
 }
