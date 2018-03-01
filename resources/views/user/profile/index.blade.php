@@ -7,7 +7,7 @@
             <div class="left dot_pic">
                 <a class="tdn" href="">
                     <div class="inl_bl relative">
-                        <img src="" alt="" class="preview s81_80">
+                        <img src="{{ asset('/') }}/icons/102713872.p.81.80.0.jpg" alt="" class="preview s81_80">
                     </div>
                 </a>
             </div>
@@ -34,7 +34,7 @@
                         @else
                             <div class="left">
                                 <span class="bordered grey c-grey">
-                                    <span class=" grey c-grey">  22 фев в 14:41 </span>
+                                    <span class=" grey c-grey">  {{ $user->last_visit }} </span>
                                 </span>
                             </div>
                         @endif

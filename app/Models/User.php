@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Faker\Provider\DateTime;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
@@ -27,7 +28,9 @@ class User extends Authenticatable
         'rating',
         'gender',
         'birthday',
-        'marital_status'
+        'marital_status',
+        'last_visit',
+        'total_online'
     ];
 
     /**
@@ -42,7 +45,7 @@ class User extends Authenticatable
     public function howOld()
     {
 
-        return empty($this->birthday) ? '' : Carbon::createFromFormat('Y-m-d', $this->birthday)->diff(Carbon::now())->y;
+        return empty($this->birthday) ? '' : Carbon::createFromFormat('Y-m-d', $this->birthday)->diff(Carbon::now(config('app.timezone')))->y;
 
     }
 
@@ -50,6 +53,41 @@ class User extends Authenticatable
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);
+    }
+
+    // See LogLasUserActivity middleware
+    public function updateLastVisit()
+    {
+        $this->updateTotalOnline();
+
+        $this->last_visit = Carbon::now(config('app.timezone'));
+        $this->save();
+    }
+
+    //count total user online time in seconds // See LogLasUserActivity middleware
+    private function updateTotalOnline()
+    {
+        //check if user been unactive last 5 minutes
+        if($this->isOnline()) {
+            //count sub between now and last visit
+
+            //in seconds
+            $sessTime = Carbon::now(config('app.timezone'))->diffInSeconds(new Carbon($this->last_visit));
+
+            //adding to total time
+            $this->total_online = $this->total_online + $sessTime;
+            $this->save();
+        }
+    }
+
+    public function getTotalOnline()
+    {
+        return gmdate("H:i:s", $this->total_online);
+    }
+
+    public function getRegDate()
+    {
+        return Carbon::parse($this->created_at)->format("Y-m-d");
     }
 
 

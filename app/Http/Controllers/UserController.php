@@ -54,10 +54,25 @@ class UserController extends Controller
         return view('user.profile.index')->with(compact('user'));
     }
 
-    public function mysite()
+    public function worksheet(int $id)
     {
-        return view('user.mysite');
+        if(Auth::id() == $id) {
+
+            $user = Auth::user();
+            return view('user.profile.worksheet')->with(compact('user'));
+        }
+
+        //if user saw another profile
+        $user = User::find($id);
+
+        //if user don't find
+        if(!$user) {
+            return redirect()->route('home');
+        }
+
+        return view('user.profile.worksheet')->with(compact('user'));
     }
+
 
 
 

@@ -22,28 +22,34 @@
                     <img class="p14" src="{{ asset('/') }}/icons/woman_off.gif" alt="(OFF)">
                 </a>
                 <a href="" class="mysite-link">
-                    <b class="nick black">UlybkaDozhdya</b>
+                    <b class="nick black">{{ empty($user->login) ? 'id' : '' }}{{ empty($user->login) ? $user->id : $user->login }}</b>
                 </a>
             </span>
             <div class="inl_bl m">
-                <a href="" class="bordered grey"> 1380.2 </a>
+                <a href="" class="bordered grey"> {{ $user->rating }} </a>
             </div>
             <span class="inl_bl m red">
                 <img class="t_bottom p16 m" src="{{ asset('/') }}/icons/rate_down.png" alt="">
                 <span class="m">-35.4</span>
             </span>
             <div>
-                <div class="grey break-word">Оксана</div>
-                <div class="grey"> 27 лет, <a href="" class="arrow_link">
+                <div class="grey break-word">{{ $user->first_name }}</div>
+                <div class="grey"> {{ $user->howOld() }} old, <a href="" class="arrow_link">
                         <span>Москва, Россия</span>
                     </a>
                 </div>
                 <div class="oh">
-                    <div class="left">
-                        <span class="bordered grey c-grey">
-                            <span class=" grey c-grey">  в 11:46 </span>
-                        </span>
-                    </div>
+                    @if($user->isOnline())
+                        <div>
+                            <a href="" class="bordered  on  signature"> В сети </a>
+                        </div>
+                    @else
+                        <div class="left">
+                                <span class="bordered grey c-grey">
+                                    <span class=" grey c-grey">  {{ $user->last_visit }} </span>
+                                </span>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -57,11 +63,11 @@
 <div class="wrapper">
     <div class="block col_blocks">
         <div>
-            <span class="grey">Регистрация:</span> 16 дек 2008
+            <span class="grey">Регистрация:</span> {{ $user->getRegDate() }}
         </div>
         <div class="pad_t_a">
             <span class="grey">Рейтинг:</span>
-            <a href="">1380.2</a>
+            <a href="">{{ $user->rating }}</a>
         </div>
         <div class="pad_t_a">
             <span class="grey">Место в рейтинге:</span>
@@ -78,7 +84,7 @@
             <span class="grey">Последний визит:</span> в 11:46
         </div>
         <div class="pad_t_a">
-            <span class="grey">Время онлайн:</span> &gt;500 ч.
+            <span class="grey">Время онлайн:</span> {{ $user->getTotalOnline() }}
         </div>
     </div>
 </div>
@@ -89,7 +95,7 @@
     <div class="wbg grey">
         <div class="list f-c_fll">
 
-           {{-- if fill--}}
+            {{-- if fill--}}
             <div class="last">
                 <div class="block break-word">
                     <div>

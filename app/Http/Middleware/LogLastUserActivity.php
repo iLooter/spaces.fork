@@ -17,14 +17,21 @@ class LogLastUserActivity
      * @return mixed
      */
 
-    //in minutes
+    //time in minutes which detect if user off/online
     private $expiresTime = 5;
 
     public function handle($request, Closure $next)
     {
         if(Auth::check()) {
-            $expiresAt = Carbon::now()->addMinutes($this->expiresTime);
+
+            //first update user online. Check if user has been offline add session time to total online time, than put to cache status that he is online
+            Auth::user()->updateLastVisit();
+
+            $expiresAt = Carbon::now(config('app.timezone'))->addMinutes($this->expiresTime);
+            //cache activity
             Cache::put('user-is-online-' . Auth::user()->id, true, $expiresAt);
+
+
         }
         return $next($request);
     }

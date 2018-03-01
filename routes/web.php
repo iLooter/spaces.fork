@@ -70,8 +70,8 @@ Route::group(['prefix' => 'settings'], function(){
 
 //Userprofile page
 Route::get('/id{id}', ['uses' => 'UserController@profile'])->name('user.profile');
-//Current userprofilepage
-Route::get('/mysite', 'UserController@mysite')->name('mysite.index');
+//Userprofile worksheet
+Route::get('/id{id}/worksheet', ['uses' => 'UserController@worksheet'])->name('user.worksheet');
 
 //Worksheet group
 Route::group(['prefix' => 'worksheet'], function() {
