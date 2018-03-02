@@ -7,42 +7,34 @@
     <meta name="description" content="{{ config('main.meta.description') }}">
     <meta name="format-detection" content="telephone=no">
 
-    @section('css')
-        @include('layouts.css')
-    @show
+    @include('layouts.css')
 
-    @section('js')
-        @include('layouts.js')
-    @show
+    @include('layouts.js')
 
     <link rel="canonical" href="{{ route('home') }}">
 </head>
 
 
 <body class="js-on font_14 {{ Auth::check() ? 'auth' : 'not_auth' }}  mobile touch_light  safari   new_browser">
-    <div id="main_wrap">
+<div id="main_wrap">
 
-        @section('header')
-            @include('layouts.header')
-        @show
+    @include('layouts.header')
 
-        <div class="main">
-            {{--Session Flash --}}
-            @foreach(['danger', 'warning', 'success', 'info'] as $msg)
-                @if(session()->has('system-message-' . $msg))
-                    <div class="oh oh system-message  {{ $msg }}">
-                        <span class="m"> {{ session()->get('system-message-' . $msg) }} </span>
-                     </div>
-                @endif
-            @endforeach
+    <div class="main">
+        {{--Session Flash --}}
+        @foreach(['danger', 'warning', 'success', 'info'] as $msg)
+            @if(session()->has('system-message-' . $msg))
+                <div class="oh oh system-message  {{ $msg }}">
+                    <span class="m"> {{ session()->get('system-message-' . $msg) }} </span>
+                </div>
+            @endif
+        @endforeach
 
-            @yield('content')
+        @yield('content')
 
-        </div>
-
-        @section('footer')
-            @include('layouts.footer')
-        @show
     </div>
+
+    @include('layouts.footer')
+</div>
 </body>
 </html>

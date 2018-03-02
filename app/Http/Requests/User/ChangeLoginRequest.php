@@ -23,8 +23,11 @@ class ChangeLoginRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'login' => 'required|between:5,15'
-        ];
+        if($this->isMethod('POST')) {
+            return [
+                'login' => 'required|between:5,15|unique:users'
+            ];
+        }
+        return [];
     }
 }

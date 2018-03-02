@@ -30,8 +30,24 @@ class MainSettingController extends Controller
         return view('user.settings.index');
     }
 
-    public function changeLoginForm()
+    public function changeLogin(ChangeLoginRequest $request)
     {
+
+        if($request->isMethod('POST')) {
+            if ($request->user()->can('change-login')) {
+                $newLogin = $request->get('login');
+
+                session()->put(compact('newLogin'));
+                //$request->user()->login = $request->get('login');
+                //$request->user()->save();
+
+                return back()
+                    ->with(self::STATUS, true);
+            } else {
+                return view('user.settings.change_login')->withErrors(['You already set login']);
+            }
+        }
+
         $inputYes = Input::get('yes');
         $inputNo =  Input::get('no');
 
@@ -41,85 +57,44 @@ class MainSettingController extends Controller
             Auth::user()->login = session()->get('newLogin');
             Auth::user()->save();
             session()->forget(['newLogin', 'status']);
-            return redirect()->route('mysite.index')->with('system-message-info', 'Ваш ник успешно изменён.');
+            return redirect()->route('settings.index')->with('system-message-info', 'Ваш ник успешно изменён.');
         }
         elseif(isset($inputNo))
         {
             session()->forget(['newLogin', 'status']);
-            return redirect()->route('mysite.index');
+            return redirect()->route('settings.index');
         }
 
         return view('user.settings.change_login');
 
     }
 
-    public function changeLogin(ChangeLoginRequest $request)
-    {
-
-
-        if ($request->user()->can('change-login')) {
-            $newLogin =  $request->get('login');
-
-            session()->put(compact('newLogin'));
-            //$request->user()->login = $request->get('login');
-            //$request->user()->save();
-
-            return back()
-                ->with(self::STATUS, true);
-        } else {
-            return view('user.settings.change_login')->withErrors(['You already set login']);
-        }
-
-        return view('user.settings.change_login');
-
-    }
-
-    public function confirmedLogin(ChangeLoginRequest $request)
-    {
-
-    }
-
-
-
-    public function showChangePasswordForm()
-    {
-        return view('user.settings.change_password');
-    }
 
     public function changePassword(ChangePasswordRequest $request)
     {
-        //Current password and new password are same
-        if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
-            return back()->withErrors(["New Password cannot be same as your current password. Please choose a different password."]);
+        if ($request->isMethod('POST')) {
+            //Current password and new password are same
+            if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
+                return back()->withErrors(["New Password cannot be same as your current password. Please choose a different password."]);
+            }
+
+
+            $user = Auth::user();
+            $user->password = bcrypt($request->get('new_password'));
+            $user->save();
+            $status = "Your password successfully changed";
+            return redirect()->route('settings.index')->with('system-message-info', 'Пароль успешно изменен');
         }
+        return view('user.settings.change_password');
 
-        $user = Auth::user();
-        $user->password = bcrypt($request->get('new_password'));
-        $user->save();
-        $status = "Your password successfully changed";
-
-        return back()->with(compact('status'));
-    }
-
-    public function showEmailSettingsPage()
-    {
-        // Hide half Email Characters.
-        //!!!!!!!!
-        //!!!!!!!
-        //Вынести этот код в отдельный класс: ViewsControllerHelper или как-то так. Чтобы избежать ТТУК и обеспечить Single Responsibility
-        //https://habrahabr.ru/post/321050/ Контроллер должен заниматься делегированием команд
-        //На выходе будет поулчаться только return hideEmail: string и передаваться в представление
-        $atIndex = strpos(Auth::user()->email, '@');
-        $atIndex /= 2;
-        $currentEmail = str_repeat("*", $atIndex) . substr(Auth::user()->email, $atIndex);
-
-        return view('user.settings.email')->with(compact('currentEmail'));
     }
 
     public function changeEmailSettings()
     {
 
+        return view('user.settings.email');
     }
+
 
     public function showChangeEmailForm()
     {

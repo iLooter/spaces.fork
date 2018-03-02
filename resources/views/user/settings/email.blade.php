@@ -5,7 +5,7 @@
     <div class="wrapper">
         <div class="block grey">
             <span class="grey">Ваш E-mail:</span>
-            <span class="black">{{ $currentEmail }}</span>
+            <span class="black">{{ Auth::user()->getHiddenEmail() }}</span>
             <a href="{{ route('settings.email.change_form') }}" class="inl-link   "> Изменить </a>
         </div>
     </div>

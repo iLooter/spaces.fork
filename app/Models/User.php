@@ -30,7 +30,8 @@ class User extends Authenticatable
         'birthday',
         'marital_status',
         'last_visit',
-        'total_online'
+        'total_online',
+        'profession'
     ];
 
     /**
@@ -80,17 +81,63 @@ class User extends Authenticatable
         }
     }
 
-    public function getTotalOnline()
+    public function getTotalOnline() : string
     {
-        return gmdate("H:i:s", $this->total_online);
+        $minutes = floor($this->total_online / 60);
+        $hours = floor($minutes/60);
+        $minutes -= $hours*60;
+
+        return "$hours hour and $minutes mins";
     }
 
-    public function getRegDate()
+    public function getRegDate() : string
     {
         return Carbon::parse($this->created_at)->format("Y-m-d");
     }
 
+    public function getGender() : string
+    {
+        return ucfirst($this->gender);
+    }
 
+    public function getMaritalStatus() : string
+    {
+        switch($this->marital_status) {
+            case 'none':
+                return 'Not Indicated';
+            case 'unmarried':
+                return 'Single';
+            case 'married':
+                return 'Married';
+            case 'no_longer_married':
+                return 'Divorced';
+            case 'active_search':
+                return 'In active search';
+            case 'inlove':
+                return 'In Love';
+            case 'betrothed':
+                return 'Betrothed';
+            case 'complicated':
+                return 'Complicated';
+            default:
+                return '';
+        }
+    }
+
+    public function getLastVisit() : string
+    {
+        $date = new Carbon($this->last_visit);
+
+        return $date->isToday() ? 'today at '.$date->format('H:i') : $date->format('Y-m-d H:i');
+    }
+
+    public function getHiddenEmail() : string
+    {
+        $atIndex = strpos($this->email, '@');
+        $atIndex /= 2;
+
+        return str_repeat("*", $atIndex) . substr($this->email, $atIndex);
+    }
 
 
 

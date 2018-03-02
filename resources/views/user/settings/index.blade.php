@@ -2,22 +2,22 @@
 
 @section('content')
 
-    @section('header_path')
+
         @include('layouts.header_path')
-    @show
+
     <div class="wrapper">
     <div class="title oh black">
         <span class="block-title"> Основные настройки</span>
     </div>
     <div class="wbg grey">
         <div class="list f-c_fll">
-            <a href="{{ route('settings.change_password_form') }}" class="link -full  darkblue c-darkblue  link_arrow">
+            <a href="{{ route('settings.change_password') }}" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Изменить пароль </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
                         </span>
             </a>
-            <a href="{{ route('settings.change_login_form') }}" class="link -full  darkblue c-darkblue  link_arrow">
+            <a href="{{ route('settings.change_login') }}" class="link -full  darkblue c-darkblue  link_arrow">
                     <span>
                         <span class="m"> Изменить Login </span>
                         <img src="{{ asset('/') }}/icons/arr_r_gray.png" class="m arr" width="8" height="12">
@@ -155,8 +155,8 @@
         </div>
     </div>
 </div>
-    @section('back')
+
         @include('layouts.back')
-    @endsection
+
 
 @endsection

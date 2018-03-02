@@ -57,9 +57,7 @@ class UserController extends Controller
     public function worksheet(int $id)
     {
         if(Auth::id() == $id) {
-
-            $user = Auth::user();
-            return view('user.profile.worksheet')->with(compact('user'));
+            return redirect()->route('worksheet.index');
         }
 
         //if user saw another profile

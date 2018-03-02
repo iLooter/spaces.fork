@@ -25,12 +25,15 @@ class ChangePasswordRequest extends FormRequest
      *
      * @return array
      */
-    public function rules() : array
+    public function rules(): array
     {
-        return [
-            'current_password' => 'required|string|'.PasscheckRule::NAME,
-            'new_password' => 'required|string|between:6,16|confirmed'
-        ];
+        if ($this->isMethod('POST')) {
+            return [
+                'current_password' => 'required|string|' . PasscheckRule::NAME,
+                'new_password' => 'required|string|between:6,16|confirmed'
+            ];
+        }
+        return [];
     }
 
 
