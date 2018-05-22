@@ -62,6 +62,18 @@ Route::group(['prefix' => 'settings'], function(){
 
 });
 
+//Messages worksheet
+Route::group(['prefix' => 'messages'], function() {
+
+    Route::get('/', 'MessageController@index')->name('messages.index');
+
+    Route::get('list', 'MessageController@list')->name('messages.list');
+    Route::get('write', 'MessageController@write')->name('messages.write');
+    Route::get('new_message', 'MessageController@newMessage')->name('messages.new_message');
+    //Route::post('change', 'Settings\MainSettingController@changeEmail')->name('settings.email.change');
+});
+
+
 
 //Userprofile page
 Route::get('/id{id}', ['uses' => 'UserController@profile'])->name('user.profile');
@@ -80,8 +92,8 @@ Route::group(['prefix' => 'worksheet'], function() {
     Route::post('/about', 'Worksheet\MainWorksheetController@aboutEdit')->name('worksheet.about_save');
 
     //About page
-    Route::match(['get', 'post'],'/maininfo', 'WorksheetController@mainInfo')->name('worksheet.main_info');
-    
+    Route::match(['get', 'post'],'/maininfo', 'WorksheetController@updateMainInfo')->name('worksheet.main_info');
+
 
 });
 

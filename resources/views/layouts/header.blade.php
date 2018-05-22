@@ -11,7 +11,7 @@
                             </a>
                         </td>
                         <td width="21%" class="table__cell">
-                            <a class="top_menu_link user_color_link" href="">
+                            <a class="top_menu_link user_color_link" href="/messages">
                                 <div class="inl_bl relative">
                                     <img class="m p25" src="{{ asset('/') }}/icons/mail_b.png" alt="Почта">
                                 </div>

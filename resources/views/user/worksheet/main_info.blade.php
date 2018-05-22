@@ -4,7 +4,7 @@
 
 @include('layouts.header_path')
 
-<form method="post" action="{{ route('worksheet.main_info') }}">
+<form method="POST" action="{{ route('worksheet.main_info') }}">
     @csrf
 
     <div class="wrapper">
@@ -56,22 +56,25 @@
             </div>
             <div class="pad_t_a">
                 <label class="lbl">{{ __('worksheet.birthday') }}</label>
-                <div class={{ $errors->has('birthday') ? "error" : ""}}>
+                <div class={{ ($errors->has('birthday') || $errors->has('year') || $errors->has('month') || $errors->has('day')) ? "error" : ""}}>
+
 
                     <select name="day" class="select">
                         <option value="0" selected="selected">-</option>
-                       @for($i = 1; $i<=31; $i++)
+                        @for($i = 1; $i<=31; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
+
 
                     <select name="month" class="select">
                         <option value="0" selected="selected">-</option>
 
                         @foreach(__('month') as $k => $month)
-                            <option value="{{ $k+1 }}">{{ $month }}</option>
+                            <option value="{{ $k }}">{{ $month }}</option>
                         @endforeach
                     </select>
+
 
                     <select name="year" class="select">
                         <option value="0" selected="selected">-</option>
@@ -79,6 +82,7 @@
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
+
                     @if($errors->has('birthday'))
                         <div class="grey pad_t_a">{{ $errors->first('birthday') }}</div>
                     @endif
