@@ -26,7 +26,7 @@
                     </span>
                 </a>
                 <div class="last">
-                    <a href="{{ route('messages.new_message') }}" class="link -full   blue c-blue">
+                    <a href="{{ route('mail.new_message') }}" class="link -full   blue c-blue">
                         <span>
                             <img src="{{ asset('/') }}/icons/befriends_blue.png" alt="" class="m">
                             <span class="m">Новый контакт</span>

@@ -140,6 +140,15 @@ class User extends Authenticatable
     }
 
 
+    /*Relationship*/
+
+    /*public function conversation()
+    {
+        return $this->belongsTo('App\Model\Conversation');
+    }*/
+
+
+
 
 
 }

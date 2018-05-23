@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MessageController extends Controller
+class MailController extends Controller
 {
     public function index()
     {
-        return view('messages.index');
+        return view('mail.index');
     }
 
     public function list()
     {
-        return view('messages.list');
+        return view('mail.list');
     }
 
     public function write()
     {
-        return view('messages.write');
+        return view('mail.write');
     }
 
     public function newMessage()
     {
-        return view('messages.new_message');
+        return view('mail.new_message');
     }
 }
