@@ -62,7 +62,15 @@ Route::group(['prefix' => 'settings'], function(){
 
 });
 
-//Messages worksheet
+/***
+ *
+ * Messages workshet
+ *
+ *
+ *
+ *
+ ***/
+
 Route::group(['prefix' => 'mail'], function() {
 
     Route::get('/', 'MailController@index')->name('mail.index');
@@ -70,7 +78,8 @@ Route::group(['prefix' => 'mail'], function() {
     Route::get('list', 'MailController@list')->name('mail.list');
     Route::get('write', 'MailController@write')->name('mail.write');
     Route::get('new_message', 'MailController@newMessage')->name('mail.new_message');
-    //Route::post('change', 'Settings\MainSettingController@changeEmail')->name('settings.email.change');
+    Route::post('new_message', 'MailController@newMessage')->name('mail.new_message');
+    Route::get('message_list', 'MailController@messageList')->name('mail.message_list');
 });
 
 

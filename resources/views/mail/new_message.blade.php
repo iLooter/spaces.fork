@@ -20,22 +20,23 @@
         </span>
     </div>
     <div class="wrapper" id="stickers_on">
-        <form action="" method="post" _lpchecked="1">
+        <form action="{{ route('mail.new_message') }}" method="post" _lpchecked="1">
+
+            @csrf
+
             <div class="block block_fix  pdb">
                 <div>
-                    <input type="hidden" name="Sgsm" value="1">
-                    <input type="hidden" name="gl_psq" value="">
-                    <input type="hidden" name="s" value="mail_XBNtEbEZ+vZ0rL65UBPUdA">
+
                     <label class="lbl">
                         Выберите собеседников:
                     </label>
-                    <input type="submit" class="hide" value="" name="gl_g2s">
+                    <input type="submit" class="hide" value="" name="css">
                     <table class="table__wrap table_no_borders show_icons">
                         <tbody>
                         <tr>
                             <td class="table__cell" width="100%">
                                 <div class="input-txt_wrapper_inline">
-                                    <input maxlength="64" name="gl_sq" value="" class="input-txt left font-medium" placeholder="Имя, ник или E-mail">
+                                    <input maxlength="64" name="username" value="" class="input-txt left font-medium" placeholder="Имя, ник или E-mail">
                                 </div>
                             </td>
                             <td class="table__cell" style="padding-left:10px;">
@@ -131,12 +132,11 @@
                                         </tbody>
                                     </table>
                                     <div id="bbmenu_tb_1527002910488" class="hide"></div>
-                                    <input type="hidden" name="toolbar_cursor" value="0,0">
                                     <div id="sm_tb_1527002910488" class="smiles_menu hide"></div>
                                 </div>
                                 <div class="input-txt_wrapper">
                                     <textarea class="input-txt" tabindex="1"
-                                                                         name="texttT" rows="4" id="textarea"
+                                                                         name="textmessage" rows="4" id="textarea"
                                                                          data-maxlength="20000"
                                                                          data-toolbar="{disable:{}}" cols="17"
                                                                          placeholder="Введите сообщение">
@@ -170,13 +170,7 @@
                     <div class="js-attach_menu spoiler_inject spoiler_inject-top"></div>
                 </div>
             </div>
-            <input type="hidden" name="Link_id" value="1657208">
-            <input type="hidden" name="Reply" value="0">
-            <input type="hidden" name="share" value="">
-            <input type="hidden" name="r" value="mail/new_message">
-            <input type="hidden" name="D" value="0">
-            <input type="hidden" name="CK" value="9188">
-            <input type="hidden" name="Rli" value="0">
+
         </form>
         <div class="cl"></div>
     </div>

@@ -29,6 +29,7 @@ class UpdateWorksheetMainInfoRequest extends FormRequest
 
         if($this->isMethod('POST')) {
 
+            //validate if date is valid
             $birthday = array('birthday' => $this->year.'-'.$this->month.'-'.$this->day);
             $this->merge($birthday);
             $validator = Validator::make($this->request, [

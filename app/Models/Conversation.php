@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conversation extends Model
 {
-    protected $table = 'conversation';
+    protected $table = 'conversations';
     public $timestamps = true;
 
     public $fillable = [
