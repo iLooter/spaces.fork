@@ -71,15 +71,15 @@ Route::group(['prefix' => 'settings'], function(){
  *
  ***/
 
-Route::group(['prefix' => 'mail'], function() {
+Route::group(['prefix' => 'messenger'], function() {
 
-    Route::get('/', 'MailController@index')->name('mail.index');
+    Route::get('/', 'MessengerController@index')->name('messenger.index');
 
-    Route::get('list', 'MailController@list')->name('mail.list');
-    Route::get('write', 'MailController@write')->name('mail.write');
-    Route::get('new_message', 'MailController@newMessage')->name('mail.new_message');
-    Route::post('new_message', 'MailController@newMessage')->name('mail.new_message');
-    Route::get('message_list', 'MailController@messageList')->name('mail.message_list');
+    Route::get('list', 'MessengerController@list')->name('messenger.list');
+    Route::get('write', 'MessengerController@write')->name('messenger.write');
+    Route::get('new_message', 'MessengerController@newMessage')->name('messenger.new_message');
+    Route::post('new_message', 'MessengerController@newMessage')->name('messenger.new_message');
+    Route::get('message_list', 'MessengerController@messageList')->name('messenger.message_list');
 });
 
 

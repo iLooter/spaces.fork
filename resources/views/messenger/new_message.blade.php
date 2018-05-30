@@ -20,7 +20,7 @@
         </span>
     </div>
     <div class="wrapper" id="stickers_on">
-        <form action="{{ route('mail.new_message') }}" method="post" _lpchecked="1">
+        <form action="{{ route('messenger.new_message') }}" method="post" _lpchecked="1">
 
             @csrf
 
@@ -136,11 +136,10 @@
                                 </div>
                                 <div class="input-txt_wrapper">
                                     <textarea class="input-txt" tabindex="1"
-                                                                         name="textmessage" rows="4" id="textarea"
-                                                                         data-maxlength="20000"
-                                                                         data-toolbar="{disable:{}}" cols="17"
-                                                                         placeholder="Введите сообщение">
-
+                                              name="textmessage" rows="4" id="textarea"
+                                              data-maxlength="20000"
+                                              data-toolbar="{disable:{}}" cols="17"
+                                              placeholder="Введите сообщение">
                                     </textarea>
                                 </div>
                             </div>

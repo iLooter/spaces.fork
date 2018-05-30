@@ -17,7 +17,7 @@
         </div>
         <div class="oh">
             <div class="wrapper">
-                <a href="{{ route('mail.write') }}" class="link -full     blue c-blue      ">
+                <a href="{{ route('messenger.write') }}" class="link -full     blue c-blue      ">
                     <span>
                         <img src="{{ asset('/') }}/icons/mail_blue.png" alt="" class="m"> <!--   -->
                         <span class="m">Новое сообщение</span>
