@@ -1,20 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="main">
-        <div class="lc_br wbg font0 relative oh" id="header_path">
-            <a href="http://spaces.ru/" style="font-size:0;">
-                <img src="{{ asset('/') }}/icons/home.png" alt="">
-            </a>
-            <span class="lc_brw">
-            <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-            <a href="http://spaces.ru/mysite/?name=QwertyRa">QwertyRa</a>
-        </span>
-            <span class="lc_brw">
-            <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-            <span class="lc_br_text">Почта</span>
-        </span>
-        </div>
         <div class="oh">
             <div class="wrapper">
                 <a href="{{ route('messenger.write') }}" class="link -full     blue c-blue      ">
@@ -27,13 +13,23 @@
             <div class="wrapper">
                 <form action="http://spaces.ru/mail/?Link_id=635507&amp;List=0&amp;P=1" method="post">
                     <div class="col_blocks block">
+
                         <div class="stnd_padd oh">
                             <input type="checkbox" name="CoNtact" value="26960167">
                             <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
-                            <a href="http://spaces.ru/mail/message_list/?Contact=26960167&amp;Link_id=672651&amp;List=0">QwertyRa </a>
+                            <a href="{{ route('messenger.message_list') }}"> </a>
                             <span>(0/1)
                             </span>
                         </div>
+
+                        <div class="stnd_padd oh">
+                            <input type="checkbox" name="CoNtact" value="26960167">
+                            <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
+                            <a href="{{ route('messenger.message_list') }}">QwertyRa </a>
+                            <span>(0/1)
+                            </span>
+                        </div>
+
                     </div>
                     <div class="bord-top">
                         <table class="table__wrap">
@@ -139,18 +135,5 @@
         </div>
         <script type="text/javascript">require('gallery')</script>
         <div style="height: 1px;"></div>
-    </div>
-    <div class="lc_br wbg font0 relative oh" id="footer_path">
-        <a href="http://spaces.ru/" style="font-size:0;">
-            <img src="{{ asset('/') }}/icons/home.png" alt="">
-        </a>
-        <span class="lc_brw">
-        <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-        <a href="http://spaces.ru/mysite/?name=QwertyRa">QwertyRa</a>
-    </span>
-        <span class="lc_brw">
-        <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-        <span class="lc_br_text">Почта</span>
-    </span>
     </div>
 @endsection

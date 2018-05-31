@@ -21,7 +21,16 @@ class MessengerController extends Controller
 
     public function index()
     {
-        return view('messenger.index');
+        /*$conversations = Conversation::where('user_one', '=', Auth::id())
+            ->orWhere('user_two', '=', Auth::id())
+            ->get();*/
+
+        
+        //dump(Auth::user()->conversations());
+
+
+
+        return view('messenger.index')->with(compact('conversations'));
     }
 
     public function list()

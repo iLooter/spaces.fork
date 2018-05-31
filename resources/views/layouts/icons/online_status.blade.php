@@ -1,0 +1,1 @@
+{{ asset('/') }}/icons/{{ $user->gender }}_{{ $user->isOnline() ? 'on' : 'off' }}.gif

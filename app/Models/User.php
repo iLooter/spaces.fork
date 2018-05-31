@@ -41,6 +41,25 @@ class User extends Authenticatable
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public function messages()
+    {
+        return $this->belongsTo('App\Models\Messenger\Message', 'sender_id');
+    }
+
+    public function conversationUserOne()
+    {
+        return $this->hasMany('App\Models\Messenger\Conversation', 'user_one', 'user_id');
+    }
+
+    public function conversationUserTwo()
+    {
+        return $this->hasMany('App\Models\Messenger\Conversation', 'user_two', 'user_id');
+    }
+
+    public function conversations() {
+        return $this->conversationUserOne->merge($this->conversationUserTwo);
+    }
+
 
 
     public function howOld()
@@ -139,6 +158,16 @@ class User extends Authenticatable
         return str_repeat("*", $atIndex) . substr($this->email, $atIndex);
     }
 
+    public function getLoginOrId() : string
+    {
+
+        if(empty($this->login)) {
+            return 'id'.$this->id;
+        }
+        else {
+            return $this->login;
+        }
+    }
 
     /*Relationship*/
 

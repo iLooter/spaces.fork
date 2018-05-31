@@ -1,5 +1,5 @@
 @auth
-    <div>
+    <div id="main_wrap" style="max-width:680px;margin: 0 auto;">
         <div class="light_header" id="navi">
             <div class="menu_wrap ">
                 <table cellspacing="0" cellpadding="0" class="table__wrap table_no_borders">
@@ -11,7 +11,7 @@
                             </a>
                         </td>
                         <td width="21%" class="table__cell">
-                            <a class="top_menu_link user_color_link" href="/messages">
+                            <a class="top_menu_link user_color_link" href="{{ route('messenger.index') }}">
                                 <div class="inl_bl relative">
                                     <img class="m p25" src="{{ asset('/') }}/icons/mail_b.png" alt="Почта">
                                 </div>
@@ -45,8 +45,8 @@
                 </table>
             </div>
         </div>
-    </div>
 @else
+    <div id="main_wrap" style="max-width:680px;margin: 0 auto;">
     <div class="unauth_header">
     <table width="100%" class="unauth_header" cellspacing="0" cellpadding="0">
         <tbody>

@@ -21,6 +21,8 @@
     @include('layouts.header')
 
     <div class="main">
+
+        @include('layouts.header_path')
         {{--Session Flash --}}
         @foreach(['danger', 'warning', 'success', 'info'] as $msg)
             @if(session()->has('system-message-' . $msg))
@@ -32,9 +34,10 @@
 
         @yield('content')
 
-    </div>
+
 
     @include('layouts.footer')
+</div>
 </div>
 </body>
 </html>

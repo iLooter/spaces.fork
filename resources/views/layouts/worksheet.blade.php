@@ -18,10 +18,10 @@
             <div class="left">
 			<span class="m">
                 <a href="http://spaces.ru/anketa/?Link_id=1543624&amp;user=UlybkaDozhdya">
-                    <img class="p14" src="{{ asset('/') }}/icons/woman_off.gif" alt="(OFF)">
+                    <img class="p14" src="@include('layouts.icons.online_status')" alt="(OFF)">
                 </a>
                 <a href="" class="mysite-link">
-                    <b class="nick black">{{ empty($user->login) ? 'id' : '' }}{{ empty($user->login) ? $user->id : $user->login }}</b>
+                    <b class="nick black">{{ $user->getLoginOrId() }}</b>
                 </a>
             </span>
                 <div class="inl_bl m">

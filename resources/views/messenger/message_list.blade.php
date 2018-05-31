@@ -2,58 +2,82 @@
 
 @section('content')
 
+        <div class="lc_br wbg font0 relative oh" id="header_path">
+            <a href="http://spaces.ru/" style="font-size:0;">
+                <img src="{{ asset('/') }}/icons/home.png" alt="">
+            </a>
+            <span class="lc_brw">
+                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+                <a href="http://spaces.ru/mysite/?name=QwertyRa">QwertyRa</a>
+            </span>
+            <span class="lc_brw">
+                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+                <a href="http://spaces.ru/mail/?List=0">Почта</a>
+            </span>
+            <span class="lc_brw">
+                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+                <a href="http://spaces.ru/mail/message_list/?Contact=27059774&amp;Link_id=180886&amp;List=0">id22780475</a>
+            </span>
+        </div>
         <div class="wrapper">
             <div class="js-row block bord-botm oh grey relative block-cntrl">
                 <div class="left font0">
-                    <a href="" class="tdn">
+                    <a href="http://spaces.ru/mysite/?link_id=186320&amp;name=id22780475" class="tdn">
                         <span class="pr">
                             <div class="inl_bl relative">
-                                <img src="{{ asset('/') }}/101115855.p.41.40.0.jpg" alt="" itemprop="thumbnailUrl" class="preview s41_40">
+                                <img src="{{ asset('/') }}/icons/210878384.p.41.40.0.jpg" alt="" itemprop="thumbnailUrl" class="preview s41_40">
                             </div>
                         </span>
                     </a>
                 </div>
                 <div class="pre_content_wrap break-word black">
-                    <img class="p14" src="{{ asset('/') }}/man_off.gif" alt="(OFF)">
-                    <a href="" class="black full_link">
-                        <b>QwertyRa</b>
+                    <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
+                    <a href="http://spaces.ru/mysite/?link_id=186320&amp;name=id22780475" class="black full_link">
+                        <b>id22780475</b>
                     </a>
-                    <span class="grey">(22 мая в 18:06)</span>
+                    <span class="grey">(вчера в 20:04)</span>
                     <div class="grey"></div>
                 </div>
-                <div class="menu_btn" onclick="return Spoilers.click(this)" data-toggle="more_menu_65687151" title="Действия">
-                    <img src="{{ asset('/') }}/arrow_bottom.png" data-hide="arrow_up.png" data-show="arrow_bottom.png" id="more_menu_65687151-icon" alt="" class="p16">
+                <div class="menu_btn" onclick="return Spoilers.click(this)" data-toggle="more_menu_65937856" title="Действия">
+                    <img src="{{ asset('/') }}/icons/arrow_bottom.png" data-hide="arrow_up.png" data-show="arrow_bottom.png" id="more_menu_65937856-icon" alt="" class="p16">
                 </div>
             </div>
-            <div id="more_menu_65687151" class="js-row wrap_list hide wbg">
+            <div id="more_menu_65937856" class="js-row wrap_list hide wbg">
                 <div>
-                    <a href="" class="link -full">
-                        <span>
-                            <img src="{{ asset('/') }}/plus_grey.png" alt="" class="m">
+                    <a href="" class="link-full"> <span>
+                            <img src="{{ asset('/') }}/icons/plus_grey.png" alt="" class="m">
                             <span class="m">Добавить собеседников</span>
                         </span>
                     </a>
                 </div>
                 <div>
-                    <a href="" class="link -full">
+                    <a href="" class="link-full">
                         <span>
-                            <img src="{{ asset('/') }}/attach.png" alt="" class="m">
+                            <img src="{{ asset('/') }}/icons/attach.png" alt="" class="m">
                             <span class="m">Вложения</span>
                         </span>
                     </a>
                 </div>
                 <div>
-                    <a href="" class="link -full">
+                    <a href="" class="link-full">
                         <span>
-                            <img src="{{ asset('/') }}/archive.png" alt="" class="m">
+                            <img src="{{ asset('/') }}/icons/archive.png" alt="" class="m">
                             <span class="m">В архив</span>
                         </span>
                     </a>
                 </div>
                 <div>
-                    <a href="" class="link -full   red c-red">
+                    <a href="" class="link-full">
                         <span>
-                            <img src="{{ asset('/') }}/garbage_red.png" alt="" class="m">
+                            <img src="{{ asset('/') }}/icons/spam.png" alt="" class="m">
+                            <span class="m">Заблокировать</span>
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="link-full   red c-red">
+                        <span>
+                            <img src="{{ asset('/') }}/icons/garbage_red.png" alt="" class="m">
                             <span class="m">Удалить</span>
                         </span>
                     </a>
@@ -63,9 +87,7 @@
             <div class="wbg" id="messages_list_form">
                 <div class="mail_form_fix">
                     <form action="" method="post">
-                        <div>
-
-                        </div>
+                        <div></div>
                         <div class="error__item_wrapper">
                             <div class="block  js-toolbar_wrap">
                                 <div class="text-input__wrap">
@@ -73,63 +95,63 @@
                                         <div class="relative">
                                             <div class="js-toolbar toolbar">
                                                 <span class="right counterBlock">
-                                                    <span id="tcounter_tb_1527161901376">0</span>/20000</span>
-                                                <table class="bb_table hide" id="bbtable_tb_1527161901376">
+                                                    <span id="tcounter_tb_1527760985065">0</span>/20000</span>
+                                                <table class="bb_table hide" id="bbtable_tb_1527760985065">
                                                     <tbody>
                                                     <tr>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="quote" class="js-bb bb bb_quote" title="Вставить цитату" id="tb_1527161901376-quote">
-                                                                <img src="{{ asset('/') }}/quote.png" alt="" class="m">
+                                                            <a href="" data-tag="quote" class="js-bb bb bb_quote" title="Вставить цитату" id="tb_1527760985065-quote">
+                                                                <img src="{{ asset('/') }}/icons/quote.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="url" class="js-bb bb bb_url" title="Вставить ссылку" id="tb_1527161901376-url">
-                                                                <img src="{{ asset('/') }}/link.png" alt="" class="m">
+                                                            <a href="" data-tag="url" class="js-bb bb bb_url" title="Вставить ссылку" id="tb_1527760985065-url">
+                                                                <img src="{{ asset('/') }}/icons/link.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="color" class="js-bb bb bb_color" title="Цветной текст" id="tb_1527161901376-color">
-                                                                <img src="{{ asset('/') }}/color.png" alt="" class="m">
+                                                            <a href="" data-tag="color" class="js-bb bb bb_color" title="Цветной текст" id="tb_1527760985065-color">
+                                                                <img src="{{ asset('/') }}/icons/color.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="b" class="js-bb bb bb_b" title="Жирный текст" id="tb_1527161901376-b">
-                                                                <img src="{{ asset('/') }}/bold.png" alt="" class="m">
+                                                            <a href="" data-tag="b" class="js-bb bb bb_b" title="Жирный текст" id="tb_1527760985065-b">
+                                                                <img src="{{ asset('/') }}/icons/bold.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="i" class="js-bb bb bb_i" title="Наклонутый текст" id="tb_1527161901376-i">
-                                                                <img src="{{ asset('/') }}/italics.png" alt="" class="m">
+                                                            <a href="" data-tag="i" class="js-bb bb bb_i" title="Наклонутый текст" id="tb_1527760985065-i">
+                                                                <img src="{{ asset('/') }}/icons/italics.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="u" class="js-bb bb bb_u" title="Подчёркнутый текст" id="tb_1527161901376-u">
-                                                                <img src="{{ asset('/') }}/underline.png" alt="" class="m">
+                                                            <a href="" data-tag="u" class="js-bb bb bb_u" title="Подчёркнутый текст" id="tb_1527760985065-u">
+                                                                <img src="{{ asset('/') }}/icons/underline.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="s" class="js-bb bb bb_s" title="Зачёркнутый текст" id="tb_1527161901376-s">
-                                                                <img src="{{ asset('/') }}/strike.png" alt="" class="m">
+                                                            <a href="" data-tag="s" class="js-bb bb bb_s" title="Зачёркнутый текст" id="tb_1527760985065-s">
+                                                                <img src="{{ asset('/') }}/icons/strike.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="smile" class="js-bb bb bb_smile" title="Смайлы" id="tb_1527161901376-smile">
-                                                                <img src="{{ asset('/') }}/smile.png" alt="" class="m">
+                                                            <a href="" data-tag="smile" class="js-bb bb bb_smile" title="Смайлы" id="tb_1527760985065-smile">
+                                                                <img src="{{ asset('/') }}/icons/smile.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="code" class="js-bb bb bb_code" title="Код" id="tb_1527161901376-code">
-                                                                <img src="{{ asset('/') }}/code.png" alt="" class="m">
+                                                            <a href="" data-tag="code" class="js-bb bb bb_code" title="Код" id="tb_1527760985065-code">
+                                                                <img src="{{ asset('/') }}/icons/code.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="fon" class="js-bb bb bb_fon" title="Фон текста" id="tb_1527161901376-fon">
-                                                                <img src="{{ asset('/') }}/bg.png" alt="" class="m">
+                                                            <a href="" data-tag="fon" class="js-bb bb bb_fon" title="Фон текста" id="tb_1527760985065-fon">
+                                                                <img src="{{ asset('/') }}/icons/bg.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                         <td class="bb_cell">
-                                                            <a href="" data-tag="more" class="js-bb bb bb_more" title="Ещё" id="tb_1527161901376-more">
-                                                                <img src="{{ asset('/') }}/dots_light.png" alt="" class="m">
+                                                            <a href="" data-tag="more" class="js-bb bb bb_more" title="Ещё" id="tb_1527760985065-more">
+                                                                <img src="{{ asset('/') }}/icons/dots_light.png" alt="" class="m">
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -138,7 +160,7 @@
                                                     <tr class="hide"></tr>
                                                     </tbody>
                                                 </table>
-                                                <div id="bbmenu_tb_1527161901376"></div>&nbsp;
+                                                <div id="bbmenu_tb_1527760985065"></div>&nbsp;
                                             </div>
                                             <div class="input-txt_wrapper">
                                                 <textarea class="input-txt" tabindex="1"
@@ -153,27 +175,41 @@
                                         </div>
                                     </div>
                                     <span class="hide" id="toolbar_payload"
-                                          data-stickers="[&quot;http://spaces.ru/services/stickers/?cat=1&amp;link_id=500994&quot;,&quot;http://spaces.ru/services/stickers/?cat=2&amp;link_id=500994&quot;,&quot;http://spaces.ru/services/stickers/?cat=3&amp;link_id=500994&quot;,&quot;http://spaces.ru/services/stickers/?cat=4&amp;link_id=500994&quot;,&quot;http://spaces.ru/services/stickers/?cat=5&amp;link_id=500994&quot;]"
-                                          data-clipboard=""></span>
+                                          data-stickers="[&quot;http://spaces.ru/services/stickers/?cat=1&amp;link_id=186320&quot;,&quot;http://spaces.ru/services/stickers/?cat=2&amp;link_id=186320&quot;,&quot;http://spaces.ru/services/stickers/?cat=3&amp;link_id=186320&quot;,&quot;http://spaces.ru/services/stickers/?cat=4&amp;link_id=186320&quot;,&quot;http://spaces.ru/services/stickers/?cat=5&amp;link_id=186320&quot;]"
+                                          data-clipboard="">
+
+                                    </span>
                                     <script type="text/javascript">require("form_toolbar")</script>
                                 </div>
                             </div>
-                            <div class="block block_fix  pdt">
-                                <span id="captcha">  </span>
+                            <div class="block block_fix  pdt"
+                            ><span id="captcha">  </span>
+                                <div class="attaches_list js-attaches" id="attaches_list" style="display:none;"
+                                     data-max_files="10">
+                                    <input type="hidden" name="Contact" value="27059774">
+                                </div>
                                 <div class="right">
                                     <input type="submit" name="cfms" value="Отправить" class="main_submit">
                                 </div>
                                 <div class="tools-wrap o_vis">
                                     <span class="form-tools__left left">
                                         <button name="smiles_btn" value="" class="url-btn" id="smiles_btn">
-                                            <img src="{{ asset('/') }}/smile(1).png" alt="" class="m">
+                                            <img src="{{ asset('/') }}/icons/smile.png" alt="" class="m">
+                                            <span class="m">
+
+                                            </span>
+                                        </button>
+                                    </span>
+                                    <span class="form-tools__left left">
+                                        <button name="attaches_btn" value="" class="url-btn" id="attaches_btn">
+                                            <img src="{{ asset('/') }}/icons/attach.png" alt="" class="m">
                                             <span class="m"></span>
                                         </button>
                                     </span>
                                     <span class="form-tools__left left">
                                         <span class="js-bb_toggle">
                                             <button name="response_btn" value="" class="url-btn" id="response_btn">
-                                                <img src="{{ asset('/') }}/a.png" alt="" class="m">
+                                                <img src="{{ asset('/') }}/icons/a.png" alt="" class="m">
                                                 <span class="m"></span>
                                             </button>
                                         </span>
@@ -183,29 +219,34 @@
                                 <div class="js-attach_menu spoiler_inject"></div>
                             </div>
                         </div>
-
+                        <input type="hidden" name="Link_id" value="180886">
+                        <input type="hidden" name="Contact" value="27059774">
+                        <input type="hidden" name="D" value=""> <input type="hidden" name="from" value="">
+                        <input type="hidden" name="CK" value="0182"> <input type="hidden" name="Rli" value="186505">
                     </form>
                     <div class="cl"></div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="pad_t_a">
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m366536338">
+                <div class="mail__dialog_wrapper mail__dialog_my" id="m370950515">
                     <div class="   block_narrow pdt pad_b_a  ">
                         <div class="  block message my  ">
                             <div class="oh">
-                                <span style="color:#CC0000" class="not_read_text">(не прочитано)</span>
+                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
+                                                  class="not_read_text"
+                                                  data-darkreader-inline-color="">(не прочитано)</span>
                                 <span class="slb right padd_left">
                                     <a href="">
-                                        <span class="slb m padd_right">в 14:38</span>
-                                        <img src="{{ asset('/') }}/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                        <span class="slb m padd_right">в 13:02</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
                                     </a>
                                 </span>
                             </div>
                             <div class="word_break">
                                 <div>
                                     <div>
-                                        <div id="previewText366536338"> test</div>
+                                        <div id="previewText370950515"> ttee</div>
                                     </div>
                                 </div>
                             </div>
@@ -213,22 +254,24 @@
                     </div>
                     <div class="cl"></div>
                 </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m366416779">
+                <div class="mail__dialog_wrapper mail__dialog_my" id="m370482888">
                     <div class="   block_narrow pdt pad_b_a  ">
                         <div class="  block message my  ">
                             <div class="oh">
-                                <span style="color:#CC0000" class="not_read_text">(не прочитано)</span>
+                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
+                                                  class="not_read_text"
+                                                  data-darkreader-inline-color="">(не прочитано)</span>
                                 <span class="slb right padd_left">
                                     <a href="">
-                                        <span class="slb m padd_right">вчера в 16:22</span>
-                                        <img src="{{ asset('/') }}/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                        <span class="slb m padd_right">24 мая в 21:44</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
                                     </a>
                                 </span>
                             </div>
                             <div class="word_break">
                                 <div>
                                     <div>
-                                        <div id="previewText366416779"> test</div>
+                                        <div id="previewText370482888"> как дела?</div>
                                     </div>
                                 </div>
                             </div>
@@ -236,72 +279,135 @@
                     </div>
                     <div class="cl"></div>
                 </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m366318433">
-                    <div class="block_narrow pdt pad_b_a">
-                        <div class="block message my">
-                            <div class="oh"><span style="color:#CC0000" class="not_read_text">(не прочитано)</span>
-                                <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">22 мая в 21:01</span>
-                                        <img src="{{ asset('/') }}/dots_grey.png" alt="" class="m" width="3px" height="15px">
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText366318433"> Ку</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m366304698">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message my  ">
-                            <div class="oh"><span style="color:#CC0000" class="not_read_text">(не прочитано)</span>
-                                <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">22 мая в 18:44</span>
-                                        <img src="{{ asset('/') }}/dots_grey.png" alt="" class="m" width="3px" height="15px">
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText366304698"> test</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m366301312">
+                <div class="mail__dialog_wrapper mail__dialog_my" id="m370482875">
                     <div class="   block_narrow pdt pad_b_a  ">
                         <div class="  block message my  ">
                             <div class="oh">
-                                <span style="color:#CC0000" class="not_read_text">(не прочитано)</span>
+                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
+                                                  class="not_read_text"
+                                                  data-darkreader-inline-color="">(не прочитано)</span>
                                 <span class="slb right padd_left">
                                     <a href="">
-                                        <span class="slb m padd_right">22 мая в 18:10</span>
-                                        <img src="{{ asset('/') }}/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                        <span class="slb m padd_right">24 мая в 21:44</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
                                     </a>
                                 </span>
                             </div>
                             <div class="word_break">
                                 <div>
                                     <div>
-                                        <div id="previewText366301312"> Привет</div>
+                                        <div id="previewText370482875"> привет</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="cl"></div>
+                </div>
+                <div class="mail__dialog_wrapper" id="m370460867">
+                    <div class="   block_narrow pdt pad_b_a  ">
+                        <div class="  block message answer  ">
+                            <div class="oh"><span class="user__nick">
+                                    <a href="">
+                                        <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
+                                    </a>
+                                    <a href="" class="mysite-link">
+                                        <b class="nick black">id22780475</b>
+                                    </a>
+                                </span>
+                                <span class="slb right padd_left">
+                                    <a href="">
+                                        <span class="slb m padd_right">24 мая в 14:38</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="word_break">
+                                <div>
+                                    <div>
+                                        <div id="previewText370460867"> test</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+                <div class="mail__dialog_wrapper" id="m370401328">
+                    <div class="   block_narrow pdt pad_b_a  ">
+                        <div class="  block message answer  ">
+                            <div class="oh">
+                                <span class="user__nick">
+                                    <a href="">
+                                        <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
+                                    </a>
+                                    <a href="" class="mysite-link">
+                                        <b class="nick black">id22780475</b>
+                                    </a>
+                                </span>
+                                <span class="slb right padd_left">
+                                    <a href="">
+                                        <span class="slb m padd_right">23 мая в 16:22</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="word_break">
+                                <div>
+                                    <div>
+                                        <div id="previewText370401328"> test</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="pag wbg">
+                <div class="pgar oh font0">
+                    <table class="table__wrap">
+                        <tbody>
+                        <tr>
+                            <td class="table__cell" width="35%">
+                                <div class="pagw">
+                                    <span class="dis"> ← Назад </span>
+                                </div>
+                            </td>
+                            <td class="table__cell">
+                                <div class="pagw pagwb">
+                                    <span class="blk"> 1 из 2 </span>
+                                </div>
+                            </td>
+                            <td class="table__cell" width="35%">
+                                <div class="pagw">
+                                    <a href="">
+                                        Вперёд → </a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagn pgl">
+                    <table class="table__wrap">
+                        <tbody>
+                        <tr>
+                            <td class="table__cell">
+                                <div class="pagw pagwr">
+                                    <span class="cur mr">1</span>
+                                </div>
+                            </td>
+                            <td class="table__cell">
+                                <div class="pagw">
+                                    <a href="">2</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -309,7 +415,7 @@
             <div>
                 <a href="" class="link -full">
                     <span>
-                        <img src="{{ asset('/') }}/archive.png" alt="" class="m">
+                        <img src="{{ asset('/') }}/icons/archive.png" alt="" class="m">
                         <span class="m">В архив</span>
                     </span>
                 </a>
@@ -317,14 +423,45 @@
             <div>
                 <a href="" class="link -full">
                     <span>
-                        <img src="{{ asset('/') }}/garbage.png" alt="" class="m">
+                        <img src="{{ asset('/') }}/icons/spam.png" alt="" class="m">
+                        <span class="m">Блок</span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="" class="link -full">
+                    <span>
+                        <img src="{{ asset('/') }}/icons/garbage.png" alt="" class="m">
                         <span class="m">Удалить</span>
                     </span>
                 </a>
             </div>
         </div>
-        <a href="http://spaces.ru/mail/write/?Link_id=1264599" class="link darkblue return full_link">
-            <span class="ico ico_arrow-back"></span> Назад </a>
+        <a href="http://spaces.ru/mail/?Link_id=176498" class="link darkblue return full_link">
+            <span class="ico ico_arrow-back"></span>
+            Назад
+        </a>
         <script type="text/javascript">require('gallery')</script>
         <div style="height: 1px;"></div>
+    </div>
+    <div class="lc_br wbg font0 relative oh" id="footer_path">
+        <a href="http://spaces.ru/" style="font-size:0;">
+            <img src="{{ asset('/') }}/icons/home.png" alt="">
+        </a>
+        <span class="lc_brw">
+            <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+            <a href="">QwertyRa</a>
+        </span>
+        <span class="lc_brw">
+            <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+            <a href="http://spaces.ru/mail/?List=0">Почта</a>
+        </span>
+        <span class="lc_brw">
+            <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
+            <a href="">id22780475</a>
+        </span>
+
+
+
+
 @endsection

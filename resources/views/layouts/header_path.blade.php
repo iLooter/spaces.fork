@@ -4,7 +4,7 @@
     </a>
     <span class="lc_brw">
                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-               <a href=""> @include('layouts.helpers.login_or_id') </a>
+               <a href=""> {{ Auth::user()->getLoginOrId() }} </a>
     </span>
     <span class="lc_brw">
                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">

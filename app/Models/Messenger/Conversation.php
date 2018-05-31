@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Conversation extends Model
 {
     protected $table = 'messenger_conversations';
+
     public $timestamps = true;
 
     public $fillable = [
@@ -19,22 +20,7 @@ class Conversation extends Model
       'status'
     ];
 
-    /*model params*/
 
-    public  $userTwo = '';
-
-    public function __construct(User $userTwo)
-    {
-        parent::__construct($userTwo);
-
-        //add code if users doesn't exist
-        $this->attributes['user_one'] = Auth::id();
-        $this->attributes['user_two'] = $userTwo;
-
-        Conversation::where('user_one', $this->attributes['user_one'])
-            ->where('user_two', $this->attributes['user_two'])
-            ->firstOrCreate(['user_one' => $this->attributes['user_one']], ['user_two' => $this->attributes['user_two']], ['status' => 0]);
-    }
 
     public function messages()
     {
@@ -43,12 +29,16 @@ class Conversation extends Model
 
     public function userone()
     {
-        return $this->belongsTo('App\User', 'user_one');
+        return $this->belongsTo('App\Models\User', 'user_id', 'user_one', 'user_id');
     }
 
     public function usertwo()
     {
-        return $this->belongsTo('App\User', 'user_two');
+        return $this->belongsTo('App\Models\User', 'user_id', 'user_two', 'user_id');
+    }
+
+    public function users() {
+        return $this->userOne>merge($this->userTwo);
     }
 
     public function sendMessage(Message $message)

@@ -119,6 +119,12 @@ Route::get('/email', function () {
     return new App\Mail\EmailVerification();
 });
 
+// Display all SQL executed in Eloquent
+Event::listen('illuminate.query', function($query)
+{
+    var_dump($query);
+});
+
 
 
 
