@@ -4,7 +4,7 @@
     </a>
     <span class="lc_brw">
                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">
-               <a href=""> {{ Auth::user()->getLoginOrId() }} </a>
+               <a href="">  </a>
     </span>
     <span class="lc_brw">
                <img src="{{ asset('/') }}/icons/sep.png" alt="" class="lc_br_sep">

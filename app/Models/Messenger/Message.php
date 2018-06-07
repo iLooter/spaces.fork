@@ -24,13 +24,13 @@ class Message extends Model
      * @var array
      */
     protected $fillable = [
-        'content',
-        'is_seen',
-        'deleted_from_sender',
-        'deleted_from_receiver',
-        'sender_id',
-        'conversation_id'
-    ];
+    'content',
+    'is_seen',
+    'deleted_from_sender',
+    'deleted_from_receiver',
+    'sender_id',
+    'conversation_id'
+];
 
 
 

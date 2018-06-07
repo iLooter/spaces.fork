@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Messenger\NewMessageRequest;
 use App\Models\Messenger\Message;
-use App\Models\Messenger\Conversation;
+use App\Models\Messenger\MessengerConversationConversation;
 use App\Models\User;
 use Auth;
 use DB;
@@ -25,8 +25,13 @@ class MessengerController extends Controller
             ->orWhere('user_two', '=', Auth::id())
             ->get();*/
 
-        
-        //dump(Auth::user()->conversations());
+
+       //dd(Auth::user()->conversations->count()); //It's work
+        dd(User::find(3)->conversations()->get());
+        //dd(User::with('conversations')->find(3)->get());
+
+
+
 
 
 

@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('login')->nullable();
+            $table->string('login');
             $table->string('email')->unique();
             $table->string('email_token')->nullable();
             $table->string('password');
@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_confirmed')->default(false);
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->float('rating', '8', '2')->default(0);
+            $table->float('rating', '8', '2');
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->date('birthday')->nullable();
             $table->enum('marital_status', [

@@ -13,7 +13,7 @@ class CreateMessageTable extends Migration
      */
     public function up()
     {
-        /*Schema::create('messenger_messages', function (Blueprint $table) {
+        Schema::create('messenger_messages', function (Blueprint $table) {
             $table->increments('id');
             $table->text('content');
             $table->boolean('is_seen')->default(0);
@@ -24,9 +24,9 @@ class CreateMessageTable extends Migration
             $table->foreign('sender_id')->references('id')->on('users');
 
             $table->integer('conversation_id')->unsigned();
-           // $table->foreign('conversation_id')->references('id')->on('messenger_conversations'); Add this in new migration see: add_foreign_key_messenger_messeges_references_user_messenger_conversation
+            $table->foreign('conversation_id')->references('id')->on('messenger_conversations');
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -36,6 +36,6 @@ class CreateMessageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messenger_messages');
+        Schema::dropIfExists('messages');
     }
 }

@@ -39,27 +39,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+
+
     protected $hidden = ['password', 'remember_token'];
 
-    public function messages()
+
+
+    public function conversations()
     {
-        return $this->belongsTo('App\Models\Messenger\Message', 'sender_id');
+        return $this->belongsToMany('App\Models\Messenger\MessengerConversation'/*, 'users_messenger_conversations', 'id', 'conversation_id'*/);
     }
-
-    public function conversationUserOne()
-    {
-        return $this->hasMany('App\Models\Messenger\Conversation', 'user_one', 'user_id');
-    }
-
-    public function conversationUserTwo()
-    {
-        return $this->hasMany('App\Models\Messenger\Conversation', 'user_two', 'user_id');
-    }
-
-    public function conversations() {
-        return $this->conversationUserOne->merge($this->conversationUserTwo);
-    }
-
 
 
     public function howOld()
@@ -169,12 +159,6 @@ class User extends Authenticatable
         }
     }
 
-    /*Relationship*/
-
-    /*public function conversation()
-    {
-        return $this->belongsTo('App\Model\Conversation');
-    }*/
 
 
 
