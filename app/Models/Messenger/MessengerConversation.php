@@ -3,6 +3,7 @@
 namespace App\Models\Messenger;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 /**
  * Class Conversation
@@ -22,8 +23,22 @@ class MessengerConversation extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\Models\User'/*, 'users_messenger_conversation', 'id', 'user_id'*/);
+        return $this->belongsToMany('App\Models\User');
     }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Models\Messenger\MessengerMessage');
+    }
+
+
+    public function getOppositeParticipant()
+    {
+       return $this->users()->where('user_id', '!=', Auth::id())->first();
+    }
+
+
+
 
 
 

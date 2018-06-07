@@ -14,21 +14,16 @@
                 <form action="http://spaces.ru/mail/?Link_id=635507&amp;List=0&amp;P=1" method="post">
                     <div class="col_blocks block">
 
-                        <div class="stnd_padd oh">
-                            <input type="checkbox" name="CoNtact" value="26960167">
-                            <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
-                            <a href="{{ route('messenger.message_list') }}"> </a>
-                            <span>(0/1)
+                        @foreach($conversations as $conversation)
+                            <div class="stnd_padd oh">
+                                <input type="checkbox" name="CoNtact" value="26960167">
+                                <img class="p14" src="{{ asset('/') }}/icons/male_off.gif" alt="(OFF)">
+                                <a href="{{ route('messenger.conversation', $conversation->id) }}"> {{ $conversation->getOppositeParticipant()->getLoginOrId() }} </a>
+                                <span>(0/{{ $conversation->messages()->count() }})
                             </span>
-                        </div>
+                            </div>
+                        @endforeach
 
-                        <div class="stnd_padd oh">
-                            <input type="checkbox" name="CoNtact" value="26960167">
-                            <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
-                            <a href="{{ route('messenger.message_list') }}">QwertyRa </a>
-                            <span>(0/1)
-                            </span>
-                        </div>
 
                     </div>
                     <div class="bord-top">

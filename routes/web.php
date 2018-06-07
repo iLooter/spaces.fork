@@ -77,9 +77,12 @@ Route::group(['prefix' => 'messenger'], function() {
 
     Route::get('list', 'MessengerController@list')->name('messenger.list');
     Route::get('write', 'MessengerController@write')->name('messenger.write');
-    Route::get('new_message', 'MessengerController@newMessage')->name('messenger.new_message');
-    Route::post('new_message', 'MessengerController@newMessage')->name('messenger.new_message');
-    Route::get('message_list', 'MessengerController@messageList')->name('messenger.message_list');
+    //Route::get('send_message', 'MessengerController@sendMessage')->name('messenger.send_message');
+
+    Route::group(['prefix' => 'conversation'], function() {
+        Route::get('/{id}/list', 'MessengerController@conversation')->name('messenger.conversation');
+        Route::post('/{id}/list', 'MessengerController@sendMessage')->name('messenger.send_message');
+    });
 });
 
 

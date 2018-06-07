@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Messenger\NewMessageRequest;
-use App\Models\Messenger\Message;
-use App\Models\Messenger\MessengerConversationConversation;
+use App\Http\Requests\Messenger\SendMessageRequest;
+use App\Models\Messenger\MessengerMessage as Message;
+use App\Models\Messenger\MessengerConversation as Conversation;
 use App\Models\User;
 use Auth;
 use DB;
@@ -21,19 +21,7 @@ class MessengerController extends Controller
 
     public function index()
     {
-        /*$conversations = Conversation::where('user_one', '=', Auth::id())
-            ->orWhere('user_two', '=', Auth::id())
-            ->get();*/
-
-
-       //dd(Auth::user()->conversations->count()); //It's work
-        dd(User::find(3)->conversations()->get());
-        //dd(User::with('conversations')->find(3)->get());
-
-
-
-
-
+        $conversations = Auth::user()->conversations()->get();
 
         return view('messenger.index')->with(compact('conversations'));
     }
@@ -49,43 +37,27 @@ class MessengerController extends Controller
     }
 
 
-    public function newMessage(NewMessageRequest $request)
+    public function sendMessage(SendMessageRequest $request)
     {
 
         if($request->isMethod('POST'))
         {
-
-            $newMsg = new Message();
-            $newMsg->setSender();
-
-            $conversation = new Conversation();
-
-            /*$newMsg = new Message();
-
-            //if user exist
-            $user_two = User::where('login', $request->username)->first();
-            //else/
-            //here code if user does not exist
-
-            $conversation = Conversation::where('user_one', Auth::user()->id)
-                ->where('user_two', $user_two->id)
-                ->firstOrCreate(['user_one' => Auth::user()->id], ['user_two' => $user_two->id], ['status' => 0]);
-
-            //dd($conversation);
-            $newMsg->user_id = Auth::user()->id;
-            $newMsg->message = $request->textmessage;
-            $newMsg->conversation_id = $conversation->id;
-            $newMsg->save();*/
-
-
-            return redirect()->route('messenger.message_list')->with('system-message-info', 'Изменения сохранены');
+            $newMessage = new Message();
+            $newMessage->create($request->content, $request->conversation_id);
+            $newMessage->save();
         }
 
-        return view('messenger.new_message');
+        return redirect()->back();
     }
 
-    public function messageList()
+    public function conversation(int $conversationID)
     {
-        return view('messenger.message_list');
+        $conversation = Conversation::find($conversationID);
+        $data = array(
+            'conversation_id' => $conversationID,
+            'participant' =>  $conversation->getOppositeParticipant()->getLoginOrId(),
+            'messages' => $conversation->messages()->take(10)->get()->reverse()
+        );
+        return view('messenger.conversation', compact('data'));
     }
 }

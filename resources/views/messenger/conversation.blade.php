@@ -31,9 +31,9 @@
                     </a>
                 </div>
                 <div class="pre_content_wrap break-word black">
-                    <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
+                    <img class="p14" src="" alt="online_status">
                     <a href="http://spaces.ru/mysite/?link_id=186320&amp;name=id22780475" class="black full_link">
-                        <b>id22780475</b>
+                        <b>{{ Auth::user()->getLoginOrId() }}</b>
                     </a>
                     <span class="grey">(вчера в 20:04)</span>
                     <div class="grey"></div>
@@ -86,7 +86,10 @@
             <div id="loadNewMessages_place"></div>
             <div class="wbg" id="messages_list_form">
                 <div class="mail_form_fix">
-                    <form action="" method="post">
+                    <form action="{{ route('messenger.send_message', $data['conversation_id']) }}" method="post">
+
+                        @csrf
+
                         <div></div>
                         <div class="error__item_wrapper">
                             <div class="block  js-toolbar_wrap">
@@ -164,7 +167,7 @@
                                             </div>
                                             <div class="input-txt_wrapper">
                                                 <textarea class="input-txt" tabindex="1"
-                                                                                     name="texttT" rows="4"
+                                                                                     name="content" rows="4"
                                                                                      id="textarea"
                                                                                      data-maxlength="20000"
                                                                                      data-toolbar="{hide:true,disable:{}}"
@@ -182,14 +185,15 @@
                                     <script type="text/javascript">require("form_toolbar")</script>
                                 </div>
                             </div>
-                            <div class="block block_fix  pdt"
-                            ><span id="captcha">  </span>
+                            <div class="block block_fix  pdt">
+                                <span id="captcha">  </span>
                                 <div class="attaches_list js-attaches" id="attaches_list" style="display:none;"
                                      data-max_files="10">
-                                    <input type="hidden" name="Contact" value="27059774">
                                 </div>
+                                <input type="hidden" name="conversation_id" value="{{ $data['conversation_id'] }}">
+
                                 <div class="right">
-                                    <input type="submit" name="cfms" value="Отправить" class="main_submit">
+                                    <input type="submit" value="Отправить" class="main_submit">
                                 </div>
                                 <div class="tools-wrap o_vis">
                                     <span class="form-tools__left left">
@@ -219,150 +223,70 @@
                                 <div class="js-attach_menu spoiler_inject"></div>
                             </div>
                         </div>
-                        <input type="hidden" name="Link_id" value="180886">
-                        <input type="hidden" name="Contact" value="27059774">
-                        <input type="hidden" name="D" value=""> <input type="hidden" name="from" value="">
-                        <input type="hidden" name="CK" value="0182"> <input type="hidden" name="Rli" value="186505">
                     </form>
+
+
                     <div class="cl"></div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="pad_t_a">
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m370950515">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message my  ">
-                            <div class="oh">
-                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
-                                                  class="not_read_text"
-                                                  data-darkreader-inline-color="">(не прочитано)</span>
-                                <span class="slb right padd_left">
+
+                @foreach( $data['messages'] as $message)
+                    <div class="mail__dialog_wrapper {{ $message->isAuthUserSender() ? 'mail__dialog_my' : '' }}"
+                         id="m370482888">
+                        <div class="   block_narrow pdt pad_b_a  ">
+                            <div class="  block message {{ $message->isAuthUserSender() ? 'my' : 'answer' }}  ">
+                                <div class="oh">
+
+
+                                    @if(!$message->is_seen)
+
+                                        <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
+                                              class="not_read_text"
+                                              data-darkreader-inline-color="">(не прочитано)</span>
+                                        <span class="slb right padd_left">
                                     <a href="">
-                                        <span class="slb m padd_right">в 13:02</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                        <span class="slb m padd_right">{{ $message->created_at }}</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px"
+                                             height="15px">
                                     </a>
                                 </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText370950515"> ttee</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m370482888">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message my  ">
-                            <div class="oh">
-                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
-                                                  class="not_read_text"
-                                                  data-darkreader-inline-color="">(не прочитано)</span>
-                                <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">24 мая в 21:44</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText370482888"> как дела?</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper mail__dialog_my" id="m370482875">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message my  ">
-                            <div class="oh">
-                                <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
-                                                  class="not_read_text"
-                                                  data-darkreader-inline-color="">(не прочитано)</span>
-                                <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">24 мая в 21:44</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText370482875"> привет</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper" id="m370460867">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message answer  ">
-                            <div class="oh"><span class="user__nick">
+
+                                    @else
+
+                                        <span class="user__nick">
                                     <a href="">
                                         <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
                                     </a>
                                     <a href="" class="mysite-link">
-                                        <b class="nick black">id22780475</b>
+                                        <b class="nick black">{{ $data['participant'] }}</b>
                                     </a>
                                 </span>
-                                <span class="slb right padd_left">
+                                        <span class="slb right padd_left">
                                     <a href="">
-                                        <span class="slb m padd_right">24 мая в 14:38</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                        <span class="slb m padd_right">{{ $message->created_at }}</span>
+                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px"
+                                             height="15px">
                                     </a>
                                 </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
+
+                                    @endif
+
+                                </div>
+                                <div class="word_break">
                                     <div>
-                                        <div id="previewText370460867"> test</div>
+                                        <div>
+                                            <div id="previewText370482888"> {{ $message->content }} </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="cl"></div>
                     </div>
-                    <div class="cl"></div>
-                </div>
-                <div class="mail__dialog_wrapper" id="m370401328">
-                    <div class="   block_narrow pdt pad_b_a  ">
-                        <div class="  block message answer  ">
-                            <div class="oh">
-                                <span class="user__nick">
-                                    <a href="">
-                                        <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
-                                    </a>
-                                    <a href="" class="mysite-link">
-                                        <b class="nick black">id22780475</b>
-                                    </a>
-                                </span>
-                                <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">23 мая в 16:22</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="word_break">
-                                <div>
-                                    <div>
-                                        <div id="previewText370401328"> test</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cl"></div>
-                </div>
+            @endforeach
+
             </div>
         </div>
         <div class="wrapper">
