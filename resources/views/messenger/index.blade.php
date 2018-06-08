@@ -19,7 +19,7 @@
                                 <input type="checkbox" name="CoNtact" value="26960167">
                                 <img class="p14" src="{{ asset('/') }}/icons/male_off.gif" alt="(OFF)">
                                 <a href="{{ route('messenger.conversation', $conversation->id) }}"> {{ $conversation->getOppositeParticipant()->getLoginOrId() }} </a>
-                                <span>(0/{{ $conversation->messages()->count() }})
+                                <span>({{ $conversation->countUnseenMessages() }}/{{ $conversation->countAllMessages() }})
                             </span>
                             </div>
                         @endforeach

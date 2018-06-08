@@ -31,7 +31,7 @@
                     </a>
                 </div>
                 <div class="pre_content_wrap break-word black">
-                    <img class="p14" src="" alt="online_status">
+                    <img class="p14" src="{{ asset('/') }}/icons/male_off.gif" alt="online_status">
                     <a href="http://spaces.ru/mysite/?link_id=186320&amp;name=id22780475" class="black full_link">
                         <b>{{ Auth::user()->getLoginOrId() }}</b>
                     </a>
@@ -239,9 +239,7 @@
                             <div class="  block message {{ $message->isAuthUserSender() ? 'my' : 'answer' }}  ">
                                 <div class="oh">
 
-
                                     @if(!$message->is_seen)
-
                                         <span style="color: rgb(204, 0, 0); --darkreader-inline-color:#ff8782;"
                                               class="not_read_text"
                                               data-darkreader-inline-color="">(не прочитано)</span>
@@ -252,25 +250,23 @@
                                              height="15px">
                                     </a>
                                 </span>
-
                                     @else
-
-                                        <span class="user__nick">
-                                    <a href="">
-                                        <img class="p14" src="{{ asset('/') }}/icons/man_off.gif" alt="(OFF)">
-                                    </a>
-                                    <a href="" class="mysite-link">
-                                        <b class="nick black">{{ $data['participant'] }}</b>
-                                    </a>
-                                </span>
-                                        <span class="slb right padd_left">
-                                    <a href="">
-                                        <span class="slb m padd_right">{{ $message->created_at }}</span>
-                                        <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px"
-                                             height="15px">
-                                    </a>
-                                </span>
-
+                                        @if(!$message->isAuthUserSender())
+                                            <span class="user__nick">
+                                                <a href="{{ route('user.profile', $data['participantID']) }}">
+                                                    <img class="p14" src="{{ asset('/') }}/icons/male_off.gif" alt="(OFF)">
+                                                </a>
+                                                <a href="{{ route('user.profile', $data['participantID']) }}" class="mysite-link">
+                                                    <b class="nick black">{{ $data['participantLog'] }}</b>
+                                                </a>
+                                            </span>
+                                        @endif
+                                            <span class="slb right padd_left">
+                                                <a href="">
+                                                    <span class="slb m padd_right">{{ $message->created_at }}</span>
+                                                    <img src="{{ asset('/') }}/icons/dots_grey.png" alt="" class="m" width="3px" height="15px">
+                                                </a>
+                                            </span>
                                     @endif
 
                                 </div>

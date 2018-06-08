@@ -31,6 +31,12 @@ class MessengerController extends Controller
         return view('messenger.list');
     }
 
+    public function newMessage()
+    {
+        //dd($request);
+        return view('messenger.new_message');
+    }
+
     public function write()
     {
         return view('messenger.write');
@@ -52,11 +58,16 @@ class MessengerController extends Controller
 
     public function conversation(int $conversationID)
     {
+
         $conversation = Conversation::find($conversationID);
+
+        $conversation->markMessagesAsSeen();
+
         $data = array(
             'conversation_id' => $conversationID,
-            'participant' =>  $conversation->getOppositeParticipant()->getLoginOrId(),
-            'messages' => $conversation->messages()->take(10)->get()->reverse()
+            'participantLog' =>  $conversation->getOppositeParticipant()->getLoginOrId(),
+            'participantID' => $conversation->getOppositeParticipant()->id,
+            'messages' => $conversation->messages()->latest()->paginate(10) //add pagination later
         );
         return view('messenger.conversation', compact('data'));
     }

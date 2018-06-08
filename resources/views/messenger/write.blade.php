@@ -17,31 +17,7 @@
                 <span class="lc_br_text">Новое сообщение</span>
             </span>
         </div>
-        <div class="wrapper">
-            <div class="list f-c_fll">
-                <a href="" class="link -full   blue c-blue">
-                    <span>
-                        <img src="{{ asset('/') }}/icons/users_blue.png" alt="" class="m">
-                        <span class="m">Создать групповую беседу</span>
-                    </span>
-                </a>
-                <div class="last">
-                    <a href="{{ route('messenger.new_message') }}" class="link -full   blue c-blue">
-                        <span>
-                            <img src="{{ asset('/') }}/icons/befriends_blue.png" alt="" class="m">
-                            <span class="m">Новый контакт</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
         <form action="" method="post">
-            <input type="hidden" name="Link_id" value="672651">
-            <input type="hidden" name="sid" value="6066638039259188">
-            <input type="hidden" name="CK" value="9188">
-            <input type="hidden" name="Sgsm" value="">
-            <input type="hidden" name="gl_psq" value="">
-            <input type="hidden" name="s" value="mail_write_aV19hQl4UUVv481gCCApJw">
             <div class="wrapper-nobg none_border">
                 <input type="submit" class="hide" value="" name="">
                 <table class="table__wrap table_no_borders show_icons">
@@ -54,7 +30,7 @@
                                     <td class="input-txt_grid_input">
                                         <div class="input-txt_wrapper_search relative">
                                             <input maxlength="64" name="gl_sq" value="" class="input-txt"
-                                                   placeholder="Введите имя или ник">
+                                                   placeholder="Введите  ник">
                                         </div>
                                     </td>
                                     <td class="input-txt_grid_sep">
@@ -70,20 +46,78 @@
                     </tbody>
                 </table>
             </div>
+
             <div class="wrapper bb0">
                 <div class="bord-botm fix_btn-width">
                     <div class="list f-c_fll">
+                        <div class="js-row block bord-botm oh grey relative">
+                            <div class="left font0">
+                                <a href="http://spaces.ru/mail/message_list/?user=QwertyRa" class="tdn">
+                                    <span class="pr">
+                                        <div class="inl_bl relative">
+                                            <img src="http://ts02.spac.me/tpic/e5007903de5a1e15f52844f19ca6cefc/211063217.p.41.40.0.jpg?1527188277" alt="" itemprop="thumbnailUrl" class="preview s41_40">
+                                        </div>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="pre_content_wrap break-word black">
+                                <img class="p14" src="//s.spac.me/i/man_on.gif" alt="(ON)">
+                                <a href="http://spaces.ru/mail/message_list/?user=QwertyRa" class="black full_link">
+                                    <b>QwertyRa</b>
+                                </a>
+                                <div class="grey">
+                                    <div class="break-word"> 0123456789|0123456789|0123456789|0123456789|012345
+                                        фтщтньщгі
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="js-row block bord-botm oh grey relative">
+                            <div class="left font0">
+                                <a href="http://spaces.ru/mail/message_list/?user=qwertyrant12" class="tdn"> <span class="pr">
+                                        <div class="inl_bl relative">
+                                            <img src="http://ts01.spac.me/tpic/2463ef734ab08a9c6b553ce340cf585e/101115855.p.41.40.0.jpg?1436446779" alt="" itemprop="thumbnailUrl" class="preview s41_40">
+                                        </div>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="pre_content_wrap break-word black">
+                                <img class="p14" src="//s.spac.me/i/man_off.gif" alt="(OFF)">
+                                <a href="http://spaces.ru/mail/message_list/?user=qwertyrant12" class="black full_link">
+                                    <b>qwertyrant12</b>
+                                </a>
+                                <div class="grey">
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="last">
-                            <label class="block oh break-word bord-botm">
-                                <img src="{{ asset('/') }}/icons/4.png" alt="" class="p16 m dot_pic">
-                                <input class="darkblue inline_button m b font-medium" type="submit"
-                                       name="gl_cg_91502506" value="Семья">
-                                <div class="right grey font-medium" style="padding: 5px 0;"> 0 человек</div>
-                            </label>
+                            <div class="js-row block bord-botm oh grey relative">
+                                <div class="left font0">
+                                    <a href="http://spaces.ru/mail/message_list/?user=QwertyRAB" class="tdn">
+                                        <span class="pr">
+                                            <div class="inl_bl relative">
+                                                <img src="http://ts01.spac.me/tpic/2463ef734ab08a9c6b553ce340cf585e/101115855.p.41.40.0.jpg?1436446779" alt="" itemprop="thumbnailUrl" class="preview s41_40">
+                                            </div>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="pre_content_wrap break-word black">
+                                    <img class="p14" src="//s.spac.me/i/man_off.gif" alt="(OFF)">
+                                    <a href="http://spaces.ru/mail/message_list/?user=QwertyRAB" class="black full_link">
+                                        <b>QwertyRAB</b>
+                                    </a>
+                                    <div class="grey">
+                                        <div class="break-word"> Демис</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </form>
         <a href="http://spaces.ru/mail/?Link_id=635507" class="link darkblue return full_link">
             <span class="ico ico_arrow-back">
