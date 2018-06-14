@@ -36,6 +36,17 @@
                         <tr>
                             <td class="table__cell" width="100%">
                                 <div class="input-txt_wrapper_inline">
+
+                                    @if(! empty($sendToUser))
+                                        <div class="left ">
+                                            <div class="oh ">
+                                            <span class="s-property">
+                                                <div class="s-property__inner">{{ $sendToUser }}<input type="submit" name="gl_sud_14440512" value="." class="ico delete-btn"></div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    @endif
+
                                     <input maxlength="64" name="username" value="" class="input-txt left font-medium" placeholder="Имя, ник или E-mail">
                                 </div>
                             </td>

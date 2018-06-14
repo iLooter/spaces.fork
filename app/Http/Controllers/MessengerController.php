@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Messenger\SendMessageRequest;
+use App\Http\Requests\Messenger\SearchUserRequest;
+use App\Http\Requests\Messenger\NewMessageRequest;
+
 use App\Models\Messenger\MessengerMessage as Message;
 use App\Models\Messenger\MessengerConversation as Conversation;
 use App\Models\User;
@@ -31,14 +34,32 @@ class MessengerController extends Controller
         return view('messenger.list');
     }
 
-    public function newMessage()
+    public function newMessage(NewMessageRequest $request)
     {
-        //dd($request);
-        return view('messenger.new_message');
+
+        $sendToUser = $request->query->all()['user']; //add check
+
+
+        return view('messenger.new_message')->with(compact('sendToUser'));
     }
 
-    public function write()
+    public function write(SearchUserRequest $request)
     {
+        if($request->isMethod('POST')) {
+            $login = $request->search_login;
+
+            try {
+
+                $users = User::where('login', 'like', '%' . $login . '%')->get()/*->pluck('id', 'login')*/;
+            }
+            catch (\Exception $ex)
+            {
+                return redirect()->back()->withErrors(['exception', $ex->getMessage()]);
+            }
+
+            return view('messenger.write')->with(compact('users'));
+        }
+
         return view('messenger.write');
     }
 

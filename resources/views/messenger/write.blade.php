@@ -18,6 +18,10 @@
             </span>
         </div>
         <form action="" method="post">
+
+
+            @csrf
+
             <div class="wrapper-nobg none_border">
                 <input type="submit" class="hide" value="" name="">
                 <table class="table__wrap table_no_borders show_icons">
@@ -29,7 +33,7 @@
                                 <tr>
                                     <td class="input-txt_grid_input">
                                         <div class="input-txt_wrapper_search relative">
-                                            <input maxlength="64" name="gl_sq" value="" class="input-txt"
+                                            <input maxlength="64" name="search_login" value="" class="input-txt"
                                                    placeholder="Введите  ник">
                                         </div>
                                     </td>
@@ -47,79 +51,58 @@
                 </table>
             </div>
 
-            <div class="wrapper bb0">
-                <div class="bord-botm fix_btn-width">
-                    <div class="list f-c_fll">
-                        <div class="js-row block bord-botm oh grey relative">
-                            <div class="left font0">
-                                <a href="http://spaces.ru/mail/message_list/?user=QwertyRa" class="tdn">
-                                    <span class="pr">
-                                        <div class="inl_bl relative">
-                                            <img src="http://ts02.spac.me/tpic/e5007903de5a1e15f52844f19ca6cefc/211063217.p.41.40.0.jpg?1527188277" alt="" itemprop="thumbnailUrl" class="preview s41_40">
-                                        </div>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="pre_content_wrap break-word black">
-                                <img class="p14" src="//s.spac.me/i/man_on.gif" alt="(ON)">
-                                <a href="http://spaces.ru/mail/message_list/?user=QwertyRa" class="black full_link">
-                                    <b>QwertyRa</b>
-                                </a>
-                                <div class="grey">
-                                    <div class="break-word"> 0123456789|0123456789|0123456789|0123456789|012345
-                                        фтщтньщгі
+            @if( $errors->any() )
+                <div class="wrapper bb0">
+                    <div class="block bord-botm"> {{ $errors->first() }} </div>
+                </div>
+            @endif
+
+            @if(!empty($users))
+
+                <div class="wrapper bb0">
+                    <div class="bord-botm fix_btn-width">
+                        <div class="list f-c_fll">
+
+                            @foreach ($users as $user)
+
+                                <div class="{{ $users->last()->id == $user->id ? "last" : "" }}">
+                                <div class="js-row block bord-botm oh grey relative">
+                                    <div class="left font0">
+                                        <a href="{{ route('messenger.new_message', ['user' => $user->login]) }}"
+                                           class="tdn">
+                                                    <span class="pr">
+                                                        <div class="inl_bl relative">
+                                                            <img src="" alt="" itemprop="thumbnailUrl"
+                                                                 class="preview s41_40">
+                                                        </div>
+                                                     </span>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="js-row block bord-botm oh grey relative">
-                            <div class="left font0">
-                                <a href="http://spaces.ru/mail/message_list/?user=qwertyrant12" class="tdn"> <span class="pr">
-                                        <div class="inl_bl relative">
-                                            <img src="http://ts01.spac.me/tpic/2463ef734ab08a9c6b553ce340cf585e/101115855.p.41.40.0.jpg?1436446779" alt="" itemprop="thumbnailUrl" class="preview s41_40">
+                                    <div class="pre_content_wrap break-word black">
+                                        <img class="p14" src="//s.spac.me/i/man_off.gif" alt="(OFF)">
+                                        <a href="{{ route('messenger.new_message', ['user' => $user->login]) }}"
+                                           class="black full_link">
+                                            <b>{{ $user->login }}</b>
+                                        </a>
+                                        <div class="grey">
+
                                         </div>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="pre_content_wrap break-word black">
-                                <img class="p14" src="//s.spac.me/i/man_off.gif" alt="(OFF)">
-                                <a href="http://spaces.ru/mail/message_list/?user=qwertyrant12" class="black full_link">
-                                    <b>qwertyrant12</b>
-                                </a>
-                                <div class="grey">
+                                    </div>
+
+                                    </div>
+                                    @endforeach
 
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="last">
-                            <div class="js-row block bord-botm oh grey relative">
-                                <div class="left font0">
-                                    <a href="http://spaces.ru/mail/message_list/?user=QwertyRAB" class="tdn">
-                                        <span class="pr">
-                                            <div class="inl_bl relative">
-                                                <img src="http://ts01.spac.me/tpic/2463ef734ab08a9c6b553ce340cf585e/101115855.p.41.40.0.jpg?1436446779" alt="" itemprop="thumbnailUrl" class="preview s41_40">
-                                            </div>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="pre_content_wrap break-word black">
-                                    <img class="p14" src="//s.spac.me/i/man_off.gif" alt="(OFF)">
-                                    <a href="http://spaces.ru/mail/message_list/?user=QwertyRAB" class="black full_link">
-                                        <b>QwertyRAB</b>
-                                    </a>
-                                    <div class="grey">
-                                        <div class="break-word"> Демис</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
 
         </form>
-        <a href="http://spaces.ru/mail/?Link_id=635507" class="link darkblue return full_link">
+
+
+        <a href="{{ redirect()->back() }}" class="link darkblue return full_link">
             <span class="ico ico_arrow-back">
             </span> Назад
         </a>

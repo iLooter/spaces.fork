@@ -53,12 +53,6 @@ class User extends Authenticatable
 
 
 
-
-
-
-
-
-
     public function howOld()
     {
 
@@ -164,6 +158,16 @@ class User extends Authenticatable
         else {
             return $this->login;
         }
+    }
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 
 
